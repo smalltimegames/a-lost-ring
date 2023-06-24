@@ -220,7 +220,8 @@ You remember that the word means "Friend" in Elvish#CLASS: narration
     + { flashlight }{ black_light_clue } [Shine the blacklight at the paper about Rohan]
         -> black_light_clue_solved
     + { flashlight } [Shine the blacklight at the book]
-        -> black_light_clue
+        TODO need book clues
+        -> blacklight_puzzle.clue2
     * [Examine the flashlight]
         It's a blacklight. The batteries seem to work.#CLASS: narration
         * * [Take the flashlight] 
@@ -233,9 +234,9 @@ You remember that the word means "Friend" in Elvish#CLASS: narration
     
     = black_light_clue
         #CLEAR
-        #CLASS: narration
+        #CLASS: text
         Without proper attire to fend off the snow on the pass of Caradhras, she would have to make for the gap of Rohan. Her grandfather had never met the horsemen of Rohan and she had been excited to do so. She made a wide berth around Isengard, and its tower Orthanc. Her route was made even wider still by her desire to avoid the trees surrounding it. The fabled trees of Fangorn had moved here to form Treegarth of Orthanc. With a bit of luck, she came across riders of Rohan who took her to Edoras. She was soon brought to the king, Elfwine. Elfwine had heard much about the bravery of the Little People from his father Eomer, specifically the valor of Meriadoc Brandybuck. 
-        #CLASS: narration
+        #CLASS: text
         Fíriel had never met anyone as important as a king before. Of course she had met Merry, Pippin and her grandpa Sam, who were all famous in their own rights. Holding positions of Master of Buckland, Thain of the Shire, and Mayor of the Shire, respectively. In another stroke of luck, the king desired nothing more than to hear of these shirefolk. Fíriel spoke at length of the fellowship, recalling all she could from the Red Book. She told Elfwine of the hobbits’ exploits during the War of the Ring, Sam and Frodo with the ring, and Pippin’s journey to Minas Tirith after he left Rohan.   She also spoke of her connection to each of the four hobbits, her grandfather Sam had introduced her to both Pippin and Merry before Sam himself had gone West to follow Frodo into the Undying Lands. Telling the tale of the one ring led into Fíriel telling Elfwine about her current quest.  Her desire to carry out her journey to find a lesser ring was reinvigorated. 
         + { flashlight } [Shine the blacklight at the paper]
             ->black_light_clue_solved
@@ -256,39 +257,83 @@ You remember that the word means "Friend" in Elvish#CLASS: narration
 === flashlight ===   
 You take the flashlight. #CLASS: narration
         -> book2
+        
+        
 === book3 ===
-    The tin contains another pin, and three pieces of paper. One paper is pinned to a piece of cork.#CLASS: narration
-    *[Read pinned paper] ->map_puzzle.clue2
+    The Two Towers contains another peg, and six pieces of paper.#CLASS: narration
+    * [Read paper 1]
+        -> hobbit_riddle.clue4
+    *[Read Paper 2] -> map_puzzle.clue2
+    TODO need map puzzle
     + { map_puzzle.clue2 } [Read about Faith's key] ->map_puzzle.clue2     
-    * [Read Paper 2] -> read_candle_hint
-    + { read_candle_hint } [Read About Champlain] -> read_candle_hint
-    //TODO does this disappear?
-    * [Read Paper 3]
-        ->blank_paper
-    + {not book4 }{ blank_paper } [Look at blank paper]->blank_paper
+    * [Read Paper 3] 
+    It is a piece of a map, maybe it will help you with these puzzle pieces.
+        ->book3
+
+    * [Read Paper 4] -> trek_to_rivendell
+    + { trek_to_rivendell } [Read about Fíriel going to Rivendell] -> trek_to_rivendell
+    * [Read Paper 5] -> bilbos_poem
+    + { flashlight } [Shine the flashlight at the book]->blacklight_puzzle.clue2
     + [Take a break] 
         You take a break and think about everything that's happened. #CLASS: narration
-        -> break       
-    =read_candle_hint
-        An avid reader and writer, Champlain would often work tirelessly through the night, even when the only way to see was by candlelight. Well, I suppose, there were often other ways to see. #CLASS: text
+        -> break
+        
+    =trek_to_rivendell
+        #CLASS: text
+        The Rohirrim knew not of the lesser rings and although they bid Fíriel to stay, to hear more of her tales of the Fellowship and the four hobbits she knew so well, she prepared to leave. Rohan was to send a small delegation to Rivendell, to trade with the few elves who remained. Since Elfwine had become Lord of the Mark he had opened more trading routes with Elves, Dwarves and the Men of Gondor. His father, Eomer’s, stories of the fellowship had long since inspired him to be more open to contact with the other regions. It was with a heavy heart that Elfwine sent his new friend to Rivendell, but he wished her luck and bid her come back someday.
+        #CLASS: text
+        Compared to her previous trek across Eriador, traveling by horseback to Riverdell passed quickly. She found herself awestruck amongst the elves, even though only a few remained there. The elves let her stay in a room that used to belong to Bilbo Baggins. Some of it had been fixed to hobbit size.  At first, Fíriel kept to herself in Rivendell, mostly exploring the ancient city and watching the elves with a sense of wonder. She also explored her room. Finding old papers of Bilbo’s, many nonsense poems and ramblings of the old hobbit. She amongst the mess of papers she also found a note in elvish, probably possibly not from Bilbo but he was known to know a bit of Elvish.
         -> look_back
-    =blank_paper
-    It's blank 
-         * * { read_candle_hint }  [Hold the blank paper towards the candlelight]
-        #CLEAR
-        As the paper approaches the flame a message starts to appear  #CLASS: narration
-            fireplace #CLASS: text
-            #IMAGE: imgs/fire_clue.png
-            * * * [Check around the furnace] 
-                After checking around the furnace you notice yet another tin. In the tin you find another piece of pinned paper and two loose pieces of paper.#CLASS: narration
-                -> book4
-        + + [Look back at the tin] -> book3
-       
+    =tengwar_message
+        #IMAGE: imgs/tengwarmessage.prolong
+        #CLASS: narration
+        It is a message an elvish { not tengwar_cipher:you can't read it }
+            * { tengwar_cipher } [Translate the message with your cipher.]->tengwar_message_solved
+            ->look_back
+    =tengwar_message_solved
+        #CLASS: narration
+        You painstakingly translate the Elvish, it appears to be a some sort of diary entry or message from one of Bilbo's Elvish friends.
+        #CLASS: text
+        I have taken a liking to the halflings’ pipeweed and tea. Quite often Bilbo and I had enjoyed tea together, followed by a smoke. When he left for the Grey Havens he left me a gift, a box of his finest tea. I shall miss him. I plan to trade for more tea and pipeweed before I join him in the Undying Lands.
+        * [Look for your gift box of tea]
+            #CLASS: narration
+            You look for your gift box of tea and open it up. Inside you find yet another book: The Return of the King.
+            * * [Open the book]
+                #CLEAR
+                ->book4
+        + [Look back at the Two Towers]
+            #CLEAR
+            ->book3
+    =bilbos_poem
+        The poem reads: #CLASS:narration 
+        #CLASS: text
+        Hey ho, to the bottle I go,
+        To heal my heart and drown my woe,
+        As rain may fall and wind may blow
+        But there’ll still be….. many miles to go.
+        
+        Sweet is the sound of the pouring rain
+        Bubbling stream from hill to plain
+        Longer than plain or rippling brook
+        Until I finish… the ol’ red book 
+        
+        Bilbo Baggins
+
+        *  [Closely Examine the Poem's Structure]
+            The beginning of each line spells bulbs bath, backwards. #CLASS: narration
+            * * [Search in your bathroom for bulbs]
+                Behind the light in your bathroom you find a cipher, it translates Elvish to English. #CLASS: narration
+                ->tengwar_cipher
+        + [Look back at the Two Towers] 
+            #CLEAR
+            -> book3
+    = tengwar_cipher
+        ->look_back
     =look_back
-        + [Look back at the tin]
+        + [Look back at the Two Towers]
         #CLEAR
         ->book3
-        
+
         
 === book4 ===
     * [Look at the pinned paper]
@@ -467,6 +512,8 @@ You take the flashlight. #CLASS: narration
         -> jigsaw_box
     = clue3
         -> book2
+    = clue4
+        -> book3
      = enter_info
         { hobbit_riddle.clue1 and hobbit_riddle.clue2 and hobbit_riddle.clue3:
                You have filled out the entirety of the chart. #CLASS: narration
