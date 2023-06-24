@@ -110,7 +110,6 @@ You remember that the word means "Friend" in Elvish#CLASS: narration
         ->hobbit_riddle.clue1
 
 === jigsaw_box_location ====
-    TODO determine location for jigsaw box
     You look under all of your bookshelves and eventually find a mysterious box.
      #CLASS: narration
     * [ Take and open the box ] #CLEAR
@@ -124,15 +123,29 @@ You remember that the word means "Friend" in Elvish#CLASS: narration
         You look back at the box.#CLASS: narration
         -> hobbit_riddle.clue2
     * [Read paper 2]
+        #IMAGE: imgs/map_quadrant_1.png
         #CLASS: narration
-        - It is a piece of a map, maybe it will help you with these puzzle pieces.
-    
+        It is a piece of a map, maybe it will help you with these puzzle pieces.
+        ->jigsaw_box
     * [Read paper 3] -> water_hint
     + { not book2 }{ water_hint } [Read about the Library of Ost-in-Edhil] -> water_hint
     * [Read paper 4] 
         ->book2_hint
     + { book2_hint } [Read about leaving Ost-in-Edhil] -> book2_hint
+    * [Read paper 5]
+        -> read_blank_water_page
+    * { read_blank_water_page }{ water_hint } [Soak the blank page in water]
+        #CLEAR
+        #IMAGE: imgs/water_clue.png
+        It reveals the text: #CLASS: narration
+            A warm coat #CLASS: text 
+        * * [Search for Your Warmest Coat] 
+            #CLASS: narration
+            In the back of your closet, you find your warmest coat. Inside of the coat you find the book, The Fellowship of the Ring. It is hollowed out with papers inside.
+            -> book2
     + [Examine the Drawing on the Lid]
+        #CLEAR
+        #IMAGE: imgs/peg_diagram.png
         On the lid of the box you see a drawing of four colored dots and lines between them to make an 'X'#CLASS: narration
             ++ [Look back at the box] -> jigsaw_box
     + [Scan the QR code]
@@ -148,6 +161,9 @@ You remember that the word means "Friend" in Elvish#CLASS: narration
         ++ [Look back at the box ]
             #CLEAR
             ->jigsaw_box
+    = read_blank_water_page
+        It's blank #CLASS: narration
+        ->jigsaw_box
     = book2_hint
         #CLEAR
          #CLASS: text
@@ -178,94 +194,69 @@ You remember that the word means "Friend" in Elvish#CLASS: narration
         Open Door
         + [Take a break] 
             -> break
-    
-=== book_1 ===
-    #CLEAR
-    #IMAGE: imgs/trench_page.png
-    You open the oceanology book to  the page about the deepest, darkest depths. It has information about the cold, dark depths of the ocean. Nothing of interest.#CLASS: narration
-        #CLEAR
-        #IMAGE: imgs/blacklight_clue.png
-        it reveals the text,#CLASS: narration
-        The frozen depths #CLASS: text
-        The only thing frozen around here is in your freezer.#CLASS: narration
-        **[Check the freezer for clues] 
-            #CLEAR
-            ->freezer
-    + Go back to the jigsaw puzzle box ->jigsaw_box
-    
-=== freezer ===
-You open the freezer and find yourself greeted by a great many frozen things, including ice cream.#CLASS: narration
-+ [Eat ice cream] -> freezer
-+ [Rummage around in the freezer]
-    Deeper in the freezer you find a strange tin. It has an oceanology sticker on it.#CLASS: narration
-        * * [Take and open the tin] 
-            #CLEAR
-            ->book2
-        + + [ Ignore the tin and eat ice cream ] -> freezer
 
 
 === book2 ===
-    The book is  has three slips of paper inside; a tack is stuck into one of the pieces of paper and into a cork. { not flashlight: There is also a strange flashlight }#CLASS: narration
-    * [Examine the tack]
-        It's a tack.
+    The Two Towers has four slips of paper inside and a peg with a piece of string attached. { not flashlight: There is also a strange flashlight }#CLASS: narration
+    * [Examine the peg]
+        It's a blue peg.
         -> look_back
-    * [Examine the cork]
-        It's a small piece of cork with a tack stuck in it. This way you won't poke your finger on the end of the tack. How considerate.#CLASS: narration
-        -> look_back
-    * [Read the tacked paper]
+    * [Read paper 1]
+        -> hobbit_riddle.clue3
+    * [Read paper 2]
         -> map_puzzle.clue1
     + { map_puzzle.clue1 } [Read about Champlain's key (tacked paper)]
         -> map_puzzle.clue1
-    //TODO maybe make this change text after first time
-    * [Read paper 2]
-        ->read_champlain
+    * [Read paper 3]
+        #CLEAR
+        #IMAGE: imgs/map_quadrant_2.png
+        #CLASS: narration
+        It is a piece of a map, maybe it will help you with these puzzle pieces.
+        ->book2
+    * [Read paper 4]
+        ->black_light_clue
+    + { not flashlight }{ black_light_clue }[Read about Rohan]
+        ->black_light_clue
+    + { flashlight }{ black_light_clue } [Shine the blacklight at the paper about Rohan]
+        -> black_light_clue_solved
+    + { flashlight } [Shine the blacklight at the book]
+        -> black_light_clue
     * [Examine the flashlight]
         It's a blacklight. The batteries seem to work.#CLASS: narration
         * * [Take the flashlight] 
         -> flashlight
-        
-    + { read_champlain }[Read about Champlain]
-        ->read_champlain
-    * [Read paper 3]
-        -> semaphore
-    + { not tin2 }{ semaphore } [Look at semaphore]
-        -> semaphore
+
+    
     + [Take a break] 
         You take a break and think about everything that's happened. #CLASS: narration
         -> break
     
-        = semaphore
+    = black_light_clue
+        #CLEAR
+        #CLASS: narration
+        Without proper attire to fend off the snow on the pass of Caradhras, she would have to make for the gap of Rohan. Her grandfather had never met the horsemen of Rohan and she had been excited to do so. She made a wide berth around Isengard, and its tower Orthanc. Her route was made even wider still by her desire to avoid the trees surrounding it. The fabled trees of Fangorn had moved here to form Treegarth of Orthanc. With a bit of luck, she came across riders of Rohan who took her to Edoras. She was soon brought to the king, Elfwine. Elfwine had heard much about the bravery of the Little People from his father Eomer, specifically the valor of Meriadoc Brandybuck. 
+        #CLASS: narration
+        Fíriel had never met anyone as important as a king before. Of course she had met Merry, Pippin and her grandpa Sam, who were all famous in their own rights. Holding positions of Master of Buckland, Thain of the Shire, and Mayor of the Shire, respectively. In another stroke of luck, the king desired nothing more than to hear of these shirefolk. Fíriel spoke at length of the fellowship, recalling all she could from the Red Book. She told Elfwine of the hobbits’ exploits during the War of the Ring, Sam and Frodo with the ring, and Pippin’s journey to Minas Tirith after he left Rohan.   She also spoke of her connection to each of the four hobbits, her grandfather Sam had introduced her to both Pippin and Merry before Sam himself had gone West to follow Frodo into the Undying Lands. Telling the tale of the one ring led into Fíriel telling Elfwine about her current quest.  Her desire to carry out her journey to find a lesser ring was reinvigorated. 
+        + { flashlight } [Shine the blacklight at the paper]
+            ->black_light_clue_solved
+        + [Look back at book contents]
             #CLEAR
-            #IMAGE: imgs/semaphore.png
-            It contains a bunch of flag symbols. Looks like flag semaphore. #CLASS: narration
-            + [Look at your Oceanology book]
-                #CLEAR
-                #IMAGE: imgs/semaphore_key.png
-                You refer again to your Oceanology book, what a handy reference! It has a whole page on flag sempahore!#CLASS: narration
-                    ** [ Decode the semaphore ]
-                        #CLEAR
-                        #IMAGE: imgs/decoded_semaphore.png
-                        It says:
-                        Nightstand #CLASS: text
-                            ***[Check around your nightstand]
-                                You check the nightstand, worried that there may be a weapon there. Luckily, you find another tin attached to the bottom of the stand. #CLASS: narration
-                                -> tin2
-            + [Look back at tin contents]
-                #CLEAR
-                -> book2
+            -> book2
+    =black_light_clue_solved
+        #CLASS: narration
+        It reveals two words amongst the text. "connect" and "four"
+        * [Search your connect four board game]
+            #CLASS: narration
+            Inside the board game, you find a book: The Two Towers.
+            -> book3
     =look_back
-        + [Look back at tin contents] 
+        + [Look back at the book contents] 
         #CLEAR
         ->book2
-    =read_champlain
-        #CLEAR
-        It reads:#CLASS: narration
-        Champlain's bravery extended further than exploring and mapping the frozen north of New France. He fought alongside the Wendat against the Iroquois. However brave he is, a man who has been to war never again sleeps quite as soundly or relaxes quite as freely as he once did. Champlain kept his weapon nearby at all times, including when he slept. #CLASS: text
-        ->look_back
 === flashlight ===   
 You take the flashlight. #CLASS: narration
         -> book2
-=== tin2 ===
+=== book3 ===
     The tin contains another pin, and three pieces of paper. One paper is pinned to a piece of cork.#CLASS: narration
     *[Read pinned paper] ->map_puzzle.clue2
     + { map_puzzle.clue2 } [Read about Faith's key] ->map_puzzle.clue2     
@@ -274,7 +265,7 @@ You take the flashlight. #CLASS: narration
     //TODO does this disappear?
     * [Read Paper 3]
         ->blank_paper
-    + {not tin3 }{ blank_paper } [Look at blank paper]->blank_paper
+    + {not book4 }{ blank_paper } [Look at blank paper]->blank_paper
     + [Take a break] 
         You take a break and think about everything that's happened. #CLASS: narration
         -> break       
@@ -290,16 +281,16 @@ You take the flashlight. #CLASS: narration
             #IMAGE: imgs/fire_clue.png
             * * * [Check around the furnace] 
                 After checking around the furnace you notice yet another tin. In the tin you find another piece of pinned paper and two loose pieces of paper.#CLASS: narration
-                -> tin3
-        + + [Look back at the tin] -> tin2
+                -> book4
+        + + [Look back at the tin] -> book3
        
     =look_back
         + [Look back at the tin]
         #CLEAR
-        ->tin2
+        ->book3
         
         
-=== tin3 ===
+=== book4 ===
     * [Look at the pinned paper]
         ->map_puzzle.clue3
     + { map_puzzle.clue3 } [Read about Hope's key] -> map_puzzle.clue3
@@ -326,11 +317,11 @@ You take the flashlight. #CLASS: narration
                         -> tin4
         + [Look back at the tin] 
             #CLEAR
-            -> tin3
+            -> book4
     =look_back
         + [Look back at the tin]
             #CLEAR
-            -> tin3
+            -> book4
 
 === tin4 ===
     Similar to the other tins, you find a pinned paper, and two loose papers. #CLASS: narration
@@ -427,8 +418,8 @@ You take the flashlight. #CLASS: narration
     + [Look at the picture frame] -> picture_frame
     + { jigsaw_box } [ Look at the jigsaw box ] -> jigsaw_box
     + { book2 } [Look at the The Fellowship of the Ring] ->book2
-    + { tin2 } [Look at the second tin] ->tin2
-    + { tin3 } [Look at the third tin] ->tin3
+    + { book3 } [Look at the second tin] ->book3
+    + { book4 } [Look at the third tin] ->book4
     + { tin4 } [Look at the fourth tin] ->tin4
     + { qr_code.directions }[Look at the directions from the website]
         ->qr_code.directions
@@ -475,7 +466,7 @@ You take the flashlight. #CLASS: narration
     = clue2
         -> jigsaw_box
     = clue3
-        -> tin3
+        -> book2
      = enter_info
         { hobbit_riddle.clue1 and hobbit_riddle.clue2 and hobbit_riddle.clue3:
                You have filled out the entirety of the chart. #CLASS: narration
@@ -487,6 +478,26 @@ You take the flashlight. #CLASS: narration
     = complete
         -> break
         
+=== blacklight_puzzle ===
+   
+    = clue1
+        -> book1
+    = clue2
+        -> book2
+    = clue3
+        -> book3
+    = clue4
+        -> book4
+     = enter_info
+        { clue1 and clue2 and clue3 and clue4:
+               You have filled out the entirety of the chart. #CLASS: narration
+               ->complete
+           - else:
+                You fill in all the information you have. #CLASS: narration
+                -> break
+        }
+    = complete
+        -> break
 === map_puzzle ===
     = clue1
         #CLEAR
@@ -495,10 +506,10 @@ You take the flashlight. #CLASS: narration
     = clue2
         It reads: #CLASS: narration
         Unfortunately, the sisters all went their separate ways with their separate keys. His first daughter, Faith, ended up at the southernmost tip of Lake Champlain. #CLASS: text
-        ->tin2.look_back
+        ->book3.look_back
     = clue3
         Hope was Champlain's second daughter. She wanted to be Champlain. In fact, she ended up sailing on a ship. Albeit, a ship much smaller than her father's. She could often be found in the crows nest, scouting new territory, just like her father. #CLASS: text
-        ->tin3.look_back
+        ->book4.look_back
     = clue4
         Champlain's third daughter, Chastity, was quick to wed. She caught the eye of a local fisherman. They lived together happily, although I hear she quickly tired of eating sea bass.#CLASS: text
         ->tin4.look_back
