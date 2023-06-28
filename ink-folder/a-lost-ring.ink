@@ -20,6 +20,8 @@ Tucked into the hollowed out book there is a usb flash drive
 * [Load the drive into your computer]
 #CLEAR
     ->usb_drive
++ { flashlight } [Shine the flashlight at the book]->blacklight_puzzle.clue1
++ { jigsaw_box } [Take a break and thing about what you've discovered so far] -> break
     
 === usb_drive===
 
@@ -90,7 +92,7 @@ You remember that the word means "Friend" in Elvish#CLASS: narration
     * [Read Paper 3] -> read_blank_fire_page
     + { not jigsaw_box_location }{ read_blank_fire_page } [Look at blank page] -> read_blank_fire_page
     * { read_fire_hint and read_blank_fire_page} [Hold the blank paper in over fire] #CLEAR
-        #IMAGE: imgs/water_clue.png
+        #IMAGE: imgs/fire_clue.png
         It reveals the text #CLASS: narration
             Under the Bookshelf #CLASS: text 
         * * [Look Under your bookshelf] -> jigsaw_box_location
@@ -273,7 +275,7 @@ You take the flashlight. #CLASS: narration
     * [Read Paper 4] -> trek_to_rivendell
     + { trek_to_rivendell } [Read about Fíriel going to Rivendell] -> trek_to_rivendell
     * [Read Paper 5] -> bilbos_poem
-    + { flashlight } [Shine the flashlight at the book]->blacklight_puzzle.clue2
+    + { flashlight } [Shine the flashlight at the book]->blacklight_puzzle.clue3
     + [Take a break] 
         You take a break and think about everything that's happened. #CLASS: narration
         -> break
@@ -285,9 +287,11 @@ You take the flashlight. #CLASS: narration
         Compared to her previous trek across Eriador, traveling by horseback to Riverdell passed quickly. She found herself awestruck amongst the elves, even though only a few remained there. The elves let her stay in a room that used to belong to Bilbo Baggins. Some of it had been fixed to hobbit size.  At first, Fíriel kept to herself in Rivendell, mostly exploring the ancient city and watching the elves with a sense of wonder. She also explored her room. Finding old papers of Bilbo’s, many nonsense poems and ramblings of the old hobbit. She amongst the mess of papers she also found a note in elvish, probably possibly not from Bilbo but he was known to know a bit of Elvish.
         -> look_back
     =tengwar_message
-        #IMAGE: imgs/tengwarmessage.prolong
+        #IMAGE: imgs/tengwarmessage.png
         #CLASS: narration
         It is a message an elvish { not tengwar_cipher:you can't read it }
+        #CLASS: tengwar
+        I have taken a liking to the halflings’ pipeweed and tea. Quite often Bilbo and I had enjoyed tea together, followed by a smoke. When he left for the Grey Havens he left me a gift, a box of his finest tea. I shall miss him. I plan to trade for more tea and pipeweed before I join him in the Undying Lands.
             * { tengwar_cipher } [Translate the message with your cipher.]->tengwar_message_solved
             ->look_back
     =tengwar_message_solved
@@ -336,104 +340,70 @@ You take the flashlight. #CLASS: narration
 
         
 === book4 ===
-    * [Look at the pinned paper]
+    The Return of the King has 3 pieces of paper in it.
+    * [Read paper 1]
+        -> hobbit_riddle.clue5
+    * [Read Paper 2]
         ->map_puzzle.clue3
     + { map_puzzle.clue3 } [Read about Hope's key] -> map_puzzle.clue3
-    * [Examine loose paper 1] 
-        It has 5 more pieces of information about Native Americans #CLASS: narration
-        -> hobbit_riddle.clue3
-    * [Examine loose paper 2] -> canvas_clue
-    + { canvas_clue } [Read about Champlain] ->canvas_clue
+    * [Read Paper 3] 
+        it's a quadrant of the map.
+        ->look_back
+    * [Read Paper 4] -> tin_clue
+    + { tin_clue } [Read about the Return to the Shire] ->tin_clue
+    + { flashlight } [Shine the flashlight at the book]->blacklight_puzzle.clue4
     + [Take a break] 
         You take a break and think about everything that's happened. #CLASS: narration
         -> break
         
-    =canvas_clue
+    =tin_clue
         #CLEAR
-        TODO missing the second A here
         It reads: #CLASS: narration
-        Champlain was not only an explorer by sea, he traversed the land as well.<br>   Algonquins taught him their ways of canoeing and camping.<br>    Natives were key to the French in learning and mastering the area surrounding Quebec.<br>   Vermont was still a part of New France and Champlain was one of the first Europeans to explore it.<br> Algonquins weren't the only natives he met in his travels, he also encountered the Abenaki and Wendat. <br> Sailing, warring and exploring only were only a small part of Champlain's later life, which was mostly occupied with governing.#CLASS: text
-        * [Closely examine the line structure of the writing]
-            The beginning of each line spells canvas. #CLASS: narration
-                ** [Search amongst your many canvases]
-                    You find the fourth and final tin. #CLASS: narration
-                    *** [Open the tin]
-                        #CLEAR
-                        -> tin4
-        + [Look back at the tin] 
-            #CLEAR
-            -> book4
+        #CLASS: text
+        Fíriel soon became accustomed to her way of life in Rivendell, the elves, however few, were very hospitable and the food and wine was a delight. Listening to songs and poems recited in the Hall of Fire after a feast became Fíriel’s favored pastime. The elves enjoyed having another hobbit who so thoroughly enjoyed their arts. They had not seen the likes of it since Bilbo had lived there.  Fíriel began to recite some of Bilbo’s poems and songs and even wrote a few of her own while she stayed there.
+    	Later, as most hobbits are want to do, she began to long for the Shire. The beauty, arts and timeless nature of the elves was inspiring. Of course, she missed the food, pipeweed and ale of the Shire. But what she truly missed, was her kin and something about the timeless nature of Rivendell always left a hole in a hobbits heart. While the elves have a similar peace and quiet, the Shire surrounds the hobbits with what they truly love: things that grow. For all hobbits hearts, in some part, feel a deep connection to good tilled earth. 
+    	The elves planned a feast for her departure. With a long table piled high with food, even in a timeless place like Rivendell, the merrymaking did not last long enough. As the food disappeared, lord of Rivendell, Elrohir, son of Elrond approached Fíriel's chair. He bore a gift beyond her wildest dreams. The Elves knew of her quest for a lesser ring, and brought her one. A relic from time passed, crafted in Ost-in-Edhil. With this ring, plus a entire pony’s saddlebag full of other gifts, Fíriel left for the Shire. To her family home at Bag End.
+            -> look_back
     =look_back
-        + [Look back at the tin]
+        + [Look back at the Return of the King]
             #CLEAR
             -> book4
 
-=== tin4 ===
-    Similar to the other tins, you find a pinned paper, and two loose papers. #CLASS: narration
-    * [Read the pinned paper] -> map_puzzle.clue4
-    + { map_puzzle.clue4 } [Read about Chastity's key] -> map_puzzle.clue4
-    * [Read loose paper 1]
-        ->perlite_paper
-    + { perlite_paper }[Read about the treasures of the new world]
-        ->perlite_paper
-    * [Read loose paper 2]
-        ->coded_letter
-    + { coded_letter }{ not decoded_letter } [Look at the coded letter]
-        ->coded_letter
-    + { decoded_letter } [Read the decoded letter]
-        ->decoded_letter
+=== tin ===
+    #IMAGE: imgs/tin.png
+    Similar to the books, you find a peg and three pieces of paper. #CLASS: narration
+     * [Read paper 1]
+        -> hobbit_riddle.clue6
+    * [Read paper 2] -> map_puzzle.clue4
+    + { map_puzzle.clue4 } [Read about adventures near the Brandywine] -> map_puzzle.clue4
+    * [Read paper 3]
+        ->firiel_ring
+    + { firiel_ring }[Read about Firiel and her ring]
+        ->firiel_ring
+        
     + [Take a break] 
         You take a break and think about everything that's happened. #CLASS: narration
         -> break
 
     =look_back
         + [Look back at the tin] #CLEAR
-        ->tin4
-    =perlite_paper
-        Champlain knew the true treasure of the new world was its bounty, furs and fish being the most plentiful. Traditional treasures such as gold, silver and perls were not as prominent. #CLASS: text
-        +[Perls? Check your bag of perlite]
-            ->cipher
-        +[Ignore the mispelling and look back at the tin]
-            #CLEAR
-            -> tin4
-    =cipher
-        #CLEAR
-        #IMAGE: imgs/cipher.png
-        You go outside and look inside the bag of perlite. You find a disk that looks like it's used to make ciphers. #narration
-        * [Take the disk and go back to the tin]
-            #CLEAR
-            ->tin4
-    =coded_letter
-        #CLASS: text
-         Long ago I found this letter from Champlain that I have yet to decipher.<br>W kfwhs hvwg zshhsf hc ps pfciuvh hc Eispsq wb hvs sjsbh ct am rsohv. W oa gdsbrwbu kwbhsf kwhv hvs Ksbroh othsf fsacjwbu Wfceicwg offckg tfca am zsu. Bck, am zsu wg zwys uszohwb; obr msh, W vcds hc fshifb wb hvs gdfwbu.<br>       -Goaisz rs Qvoadzowb
-        + { cipher } [Use the cipher]
-            ->decoded_letter
-        +[Look back at the tin]
-            #CLEAR
-            ->tin4
-    =decoded_letter
-        #CLEAR
-        #CLASS: text
-        I write this letter to be brought to Quebec in the event of my death. I am spending winter with the Wendat after removing Iroquois arrows from my leg. Now, my leg is like gelatin; and yet, I hope to return in the spring.<br>     -Samuel de Champlain
-        +{ not jello }[Gelatin, huh? Time to break out the Jello]
-            ->jello
-        +[Look back at the tin]
-            #CLEAR
-            ->tin4
-    =jello
-        You look in a paper bag filled with JELLO (not actual gelatin, but the boxes used to prepare it). You find a compass. It might come in handy. #CLASS: narration
-        +[Take the compass]
-            -> compass
+        ->tin
+    =firiel_ring
+    #CLASS: text
+        Fíriel alternated between wearing the ring on her finger and wearing it around her neck. It seems to fit her finger perfectly no matter which finger she wore it on. The ring did not seem to give her any powers, no invisibility, no control over men or other races. But when she put it on she did feel the pride which came with completing her quest to discover the ring.
+        So I have read in her writings which were never as consistent after she returned to Bag End. She did yet venture out from the Shire with her ring. Perhaps she left it on one of her adventures, at the end, it was buried with her, or perhaps she ventured to the Undying Lands, her friendship with the elves would have surely earned her a journey. I have compiled some of her writing snippets but I haven’t yet been able to find the ring's resting place.
+        ->look_back
+
         
 === compass ===
     It's a pretty cool looking old compass. You stick it in your pocket. #CLASS: narration
-    ->tin4.look_back
+    ->tin.look_back
 
 === break === 
     What will you do? #CLASS: narration
     //TODO have to finish the last clues
     + { qr_code.directions }{ html_clue }[Head outside] -> head_outside
-    + [ Look at the Native American chart]
+    + [ Look at the Hobbit chart]
         #CLEAR
         #IMAGE: imgs/lotr_riddle.png
         You closely examine the chart, it has pictures of five different Native Americans and a 5 x 5 grid beneath them. #CLASS: narration
@@ -463,9 +433,9 @@ You take the flashlight. #CLASS: narration
     + [Look at the picture frame] -> picture_frame
     + { jigsaw_box } [ Look at the jigsaw box ] -> jigsaw_box
     + { book2 } [Look at the The Fellowship of the Ring] ->book2
-    + { book3 } [Look at the second tin] ->book3
-    + { book4 } [Look at the third tin] ->book4
-    + { tin4 } [Look at the fourth tin] ->tin4
+    + { book3 } [Look at the The Two Towers] ->book3
+    + { book4 } [Look at the The Return of the King] ->book4
+    + { tin } [Look at the tin] ->tin
     + { qr_code.directions }[Look at the directions from the website]
         ->qr_code.directions
     
@@ -487,18 +457,18 @@ You take the flashlight. #CLASS: narration
         { map_puzzle.complete:
             #CLEAR
             #IMAGE: imgs/x_map.png
-            The map is complete and an X points to a "Sigue Noc", a horseshoe crab. #CLASS: narration
+            The map is complete and an X points to the village of "Bree" #CLASS: narration
             #IMAGE: imgs/sigue_noc.png
         }
         * * { pin_map > 3 } [Connect the pins to make an X]
             ->map_puzzle.complete
-        * * { map_puzzle.clue1 } [Add one pin to the tip of the arrow of the native (Champlain)]
+        * * { map_puzzle.clue1 } [Place a peg on the Grey Havens]
             ->pin_map.pin1
-        * * { map_puzzle.clue2 } [Pin the southernmost tip of lake Champlain (Faith)]
+        * * { map_puzzle.clue2 } [Place a peg on the last "n" of Rhovanion]
             ->pin_map.pin2
-        * * { map_puzzle.clue3 } [Pin the crow's nest of the small ship (Hope)]
+        * * { map_puzzle.clue3 } [Place a peg on Erebor]
             ->pin_map.pin3
-        * * { map_puzzle.clue4 } [Pin the eye of the sea bass (Chastity)]
+        * * { map_puzzle.clue4 } [Place a peg on Lake Evendim]
             ->pin_map.pin4
         + + [Look at something else] 
         -> break
@@ -514,8 +484,12 @@ You take the flashlight. #CLASS: narration
         -> book2
     = clue4
         -> book3
+    = clue5
+        -> book4
+    = clue6
+        -> tin
      = enter_info
-        { hobbit_riddle.clue1 and hobbit_riddle.clue2 and hobbit_riddle.clue3:
+        { clue1 and clue2 and clue3 and clue4 and clue5 and clue6:
                You have filled out the entirety of the chart. #CLASS: narration
                ->complete
            - else:
@@ -548,18 +522,23 @@ You take the flashlight. #CLASS: narration
 === map_puzzle ===
     = clue1
         #CLEAR
-        Although he wasn't an explorer for the sake of treasure, his extensive travels did amass him a slight fortune. And so, Champlain left keys to his treasure to each of his daughters and kept the last for himself. If he passed, he wanted the sisters to find his treasure together. Champlain kept his key alongside other knick knacks. He had been shot in the knee once by the arrow of a savage. He kept the point of the arrow as a sort of memento, right next to his key. #CLASS: text
+        // green
+        As I sat by the hearth, my curiosity sparked by Fíriel's tales, I found myself yearning for tidings of her fate. No mention of her departure or passing could be found within the annals of the Shire. I set forth to the port, where whispers suggested she may have set sail for the Undying Lands. In their archives, time slipped away as I combed through faded pages, searching for answers. #CLASS: text
         -> book2.look_back
     = clue2
-        It reads: #CLASS: narration
-        Unfortunately, the sisters all went their separate ways with their separate keys. His first daughter, Faith, ended up at the southernmost tip of Lake Champlain. #CLASS: text
+        //Red
+        TODO perspective on this is wrong
+        In later days, Fíriel ventured far and wide, exploring the far reaches of Middle-earth. Westward she ventured, passing Gladden fields, lightly stepping into Fangorn, and even venturing through the shadowed paths of Mirkwood. Few had ventured as far, save for the boldest of souls like Gandalf and King Elessar, known to us hobbits as Strider. Her wanderlust carried her to the very end of Rhovanion, before she heeded the call to turn back, leaving her footprints on the edge of the known world. #CLASS: text
         ->book3.look_back
     = clue3
-        Hope was Champlain's second daughter. She wanted to be Champlain. In fact, she ended up sailing on a ship. Albeit, a ship much smaller than her father's. She could often be found in the crows nest, scouting new territory, just like her father. #CLASS: text
+        //yellow
+        Fíriel seemed to seek old allies of hobbits, and the echoes of her tale guided my steps. Among mist-shrouded peaks, I found a sentinel of stone, guarding a kingdom's riches untold. Within its ancient embrace, where the spirit of fire once reigned, Fíriel had journeyed. #CLASS: text
         ->book4.look_back
     = clue4
-        Champlain's third daughter, Chastity, was quick to wed. She caught the eye of a local fisherman. They lived together happily, although I hear she quickly tired of eating sea bass.#CLASS: text
-        ->tin4.look_back
+        //blue
+        TODO perspective is wrong
+        Fíriel's sense of adventure was more grand than even Bilbo’s. She was the talk of the Shire, why I imagine ever her great-grandad the Gaffer might have said, “she’s cracked, that lass” supposing he was still at that time.  But not all of Fíriel's travels were beyond the grasp of hobbits.  She once wrote of walking to the head of the Brandywine River.  Seeking solace in the beauty of the lake and its tranquil shores.#CLASS: text
+        ->tin.look_back
     = complete
         You draw lines to connect the pins. #CLASS: narration
         ->break.look_at_map
