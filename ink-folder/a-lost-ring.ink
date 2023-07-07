@@ -11,7 +11,7 @@ Inside the book you find a folded up note note. It appears old and handwritten.
  #CLASS: text
 Having opened this book, I suppose you already know much of hobbits. A little people, with no beards, rough hairy feet, and known to be quite round in the middle. They are fond of pipe weed and even fonder of breakfast lunch and dinner, especially second breakfast, lunch and dinner. What they aren’t fond of is adventure or doing anything unexpected. Bilbo Baggins was a hobbit who did things unexpected and had a grand adventure. And he has had nothing but trouble since. Trouble and a vast amount of treasure. Hobbits who didn’t know Bilbo would have assumed he was a Took (and he was, although not in name) as Tooks have a penchant for trouble.
  #CLASS: text
-Mr. Baggins however, is only relevant to this story because he had an adventure. And on that adventure he came across a magic ring. This magic ring happened to be a ring of power, in fact it was the ring of power, and that was no good and led to plenty of trouble.  What you may not know, is that there are, in fact, many rings that aren’t rings of power at all. Magic rings that don’t attract a lot of attention and trouble. These magic rings are spread across Middle Earth and I would much like your help finding one.
+Mr. Baggins however, is only relevant to this story because he had an adventure. And on that adventure he came across a magic ring. This magic ring happened to be a ring of power, in fact it was the ring of power, and that was no good and led to plenty of trouble.  What you may not know, is that there are, in fact, many rings that aren’t rings of power at all. Magic rings that don’t attract a lot of attention and trouble. These magic rings are spread across Middle Earth and I would very much like your help finding one.
  #CLASS: text
 If you are a hobbit and opposed to adventure, I promise you can help from your comfortable hobbit-hole, a book in one hand and pipe in the other. If you are more of a Took in nature, I suspect we can find something unexpected along the way.
 #CLASS narration
@@ -51,7 +51,8 @@ You remember that the word means "Friend" in Elvish#CLASS: narration
         -> usb_text
     = usb_text
     #CLEAR
-    I, much like hobbits, enjoy a good riddle. To see if you are good enough to join me on my quest for a lesser ring, try your hand at a riddle even the wisest was pressed to solve.
+    #CLASS: text
+    I, like any hobbit, enjoy a good riddle. To see if you are good enough to join me on my quest for a lesser ring, try your hand at a riddle even the wisest was pressed to solve.
     {
         -unlocked_folder:
             ->unlocked_folder
@@ -77,6 +78,8 @@ You remember that the word means "Friend" in Elvish#CLASS: narration
             looks like a shower, with a pretty cool curtain #CLASS: narration
              -> locked_text
         * [Remembering that you recently received a picture of yourself visiting the steam vents of a volcano you look at that picture]
+            #CLEAR
+            It's a picture of you and your amazing brother at the steam vents of a volcano. #CLASS: narration
             * * [Open the picture frame] 
             #CLEAR
             Inside the picture you find four slips of paper.#CLASS: narration
@@ -99,21 +102,23 @@ You remember that the word means "Friend" in Elvish#CLASS: narration
     +{ jigsaw_box }[Take a break]
         ->break
     = read_fire_hint
+    #CLEAR
     You read the text: #CLASS: narration
         #CLASS: text
         In the ruins of an old elvish city, Ost-in-Edhil,  Fíriel found steam spitting from the earth and fires hot enough to forge the rings. Here, by some magic, or luck, or perhaps both, she found a ring. The ring had no markings on the band. Fíriel remembered how Gandalf had discovered the ring of power. Without another thought, Fíriel cast her newfound ring into the fire. She hoped for a secret that only fire could tell. The ring, alas, did not survive the ordeal but as Fíriel stared into the flames she was inspired to search other places amongst the ruins of Ost-in-Edhil.
         ->picture_frame
     = read_blank_fire_page
+        #CLEAR
         It's blank #CLASS: narration
         ->picture_frame
     = read_riddle_chart
+        #CLEAR
         It contains a chart discusses hobbits On the reverse side there are five sentences explaining things about them.#CLASS: narration
         #IMAGE: imgs/lotr_riddle.png
         ->hobbit_riddle.clue1
 
 === jigsaw_box_location ====
-    You look under all of your bookshelves and eventually find a mysterious box.
-     #CLASS: narration
+    You look under all of your bookshelves and eventually find a mysterious box. #CLASS: narration
     * [ Take and open the box ] #CLEAR
         ->jigsaw_box
 
@@ -122,7 +127,7 @@ You remember that the word means "Friend" in Elvish#CLASS: narration
     Inside the box are a mass of jigsaw puzzle pieces and 5 pieces of paper. On the lid of the box there is a drawing and a QR Code. #CLASS: narration
     * [Read paper 1]
         It is 5 sentences discussing the hobbits.#CLASS: narration
-        You look back at the box.#CLASS: narration
+        ++ [Look back at the box]#CLEAR
         -> hobbit_riddle.clue2
     * [Read paper 2]
         #IMAGE: imgs/map_quadrant_1.png
@@ -141,7 +146,7 @@ You remember that the word means "Friend" in Elvish#CLASS: narration
         #IMAGE: imgs/water_clue.png
         It reveals the text: #CLASS: narration
             A warm coat #CLASS: text 
-        * * [Search for Your Warmest Coat] 
+        * * [Search for Your Warmest Coat] #CLEAR
             #CLASS: narration
             In the back of your closet, you find your warmest coat. Inside of the coat you find the book, The Fellowship of the Ring. It is hollowed out with papers inside.
             -> book2
@@ -149,7 +154,7 @@ You remember that the word means "Friend" in Elvish#CLASS: narration
         #CLEAR
         #IMAGE: imgs/peg_diagram.png
         On the lid of the box you see a drawing of four colored dots and lines between them to make an 'X'#CLASS: narration
-            ++ [Look back at the box] -> jigsaw_box
+            ->look_back
     + [Scan the QR code]
         -> qr_code
     + [Take a break]
@@ -160,18 +165,18 @@ You remember that the word means "Friend" in Elvish#CLASS: narration
         #CLEAR
         #CLASS: text
         Fíriel went to the ruins of the library of Ost-in-Edhil digging for scraps of paper and remnants of old books and scrolls. There she found out more about the one ring, Isildur’s Bane. After taking the ring, Isildur and his people were waylaid by the orcs of the mountains. In Isildur’s attempt to flee he put on the ring, and dove into the river Anduin. Engulfed by the great waters he was revealed to his enemy. Isildur was slain and the ring sank in the waters, lost and forgotten.
-        ++ [Look back at the box ]
-            #CLEAR
-            ->jigsaw_box
+            ->look_back
     = read_blank_water_page
         It's blank #CLASS: narration
-        ->jigsaw_box
+        ->look_back
     = book2_hint
         #CLEAR
          #CLASS: text
     	Fíriel felt as if Ost-in-Edhil held no more usefulness for her and decided to venture Eastward, over Caradhas. She packed her things but one from the Shire doesn’t experience the desolate cold of the mountain pass. She soon realized her pack was missing one very important thing.
-        -> jigsaw_box
-
+        -> look_back
+    = look_back
+        + [Look Back at the Box] #CLEAR 
+        ->jigsaw_box
 === qr_code ===
     #CLEAR
     #IMAGE: imgs/qr_code_site.png
@@ -201,7 +206,7 @@ You remember that the word means "Friend" in Elvish#CLASS: narration
 === book2 ===
     The Two Towers has four slips of paper inside and a peg with a piece of string attached. { not flashlight: There is also a strange flashlight }#CLASS: narration
     * [Examine the peg]
-        It's a blue peg.
+        It's a green peg.
         -> look_back
     * [Read paper 1]
         -> hobbit_riddle.clue3
@@ -262,7 +267,7 @@ You take the flashlight. #CLASS: narration
         
         
 === book3 ===
-    The Two Towers contains another peg, and six pieces of paper.#CLASS: narration
+    The Two Towers contains a red peg, and six pieces of paper.#CLASS: narration
     * [Read paper 1]
         -> hobbit_riddle.clue4
     *[Read Paper 2] -> map_puzzle.clue2
@@ -340,7 +345,7 @@ You take the flashlight. #CLASS: narration
 
         
 === book4 ===
-    The Return of the King has 3 pieces of paper in it.
+    The Return of the King has 3 pieces of paper in it and a yellow peg.
     * [Read paper 1]
         -> hobbit_riddle.clue5
     * [Read Paper 2]
@@ -371,7 +376,7 @@ You take the flashlight. #CLASS: narration
 
 === tin ===
     #IMAGE: imgs/tin.png
-    Similar to the books, you find a peg and three pieces of paper. #CLASS: narration
+    Similar to the books, you find a blue peg and three pieces of paper. #CLASS: narration
      * [Read paper 1]
         -> hobbit_riddle.clue6
     * [Read paper 2] -> map_puzzle.clue4
