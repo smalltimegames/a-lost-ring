@@ -9,11 +9,11 @@ On your shelf, you find a book, "The Hobbit" that you haven't seen before.#CLASS
 #CLASS: narration
 Inside the book you find a folded up note note. It appears old and handwritten.
  #CLASS: text
-Having opened this book, I suppose you already know much of hobbits. A little people, with no beards, rough hairy feet, and known to be quite round in the middle. They are fond of pipe weed and even fonder of breakfast lunch and dinner, especially second breakfast, lunch and dinner. What they aren’t fond of is adventure or doing anything unexpected. Bilbo Baggins was a hobbit who did things unexpected and had a grand adventure. And he has had nothing but trouble since. Trouble and a vast amount of treasure. Hobbits who didn’t know Bilbo would have assumed he was a Took (and he was, although not in name) as Tooks have a penchant for trouble.
+Having opened this book, I suppose you already know much of hobbits. A little people, with no beards, rough hairy feet, and quite round in the middle. They are fond of pipe weed and even fonder of breakfast, lunch, and dinner. Especially second breakfast, lunch, and dinner. What they aren’t fond of is adventure or doing anything unexpected. Bilbo Baggins was a hobbit who did things unexpected and had himself a grand adventure. And he has had nothing but trouble since. Trouble and a vast amount of treasure. Hobbits who didn’t know Bilbo would have assumed he was a Took (and he was, although not in name) as Tooks have a penchant for trouble.
  #CLASS: text
-Mr. Baggins however, is only relevant to this story because he had an adventure. And on that adventure he came across a magic ring. This magic ring happened to be a ring of power, in fact it was the ring of power, and that was no good and led to plenty of trouble.  What you may not know, is that there are, in fact, many rings that aren’t rings of power at all. Magic rings that don’t attract a lot of attention and trouble. These magic rings are spread across Middle Earth and I would very much like your help finding one.
+Mr. Baggins however, is only relevant to this story because he had an adventure. And on that adventure he came across a magic ring. This magic ring, by the most unlikely of circumstances, was a ring of power, in fact it was <em>the</em> ring of power, and that was no good and led to plenty of trouble.  What you may not know, is that there are in fact, many rings that aren’t rings of power at all. Magic rings that don’t attract a lot of attention and trouble. These magic rings are spread across Middle Earth and I would very much like your help finding one.
  #CLASS: text
-If you are a hobbit and opposed to adventure, I promise you can help from your comfortable hobbit-hole, a book in one hand and pipe in the other. If you are more of a Took in nature, I suspect we can find something unexpected along the way.
+If you are - like most hobbits - opposed to adventure, I promise you can help from your comfortable hobbit-hole, a book in one hand and pipe in the other. If you are more of a Took in nature, I suspect we can find something unexpected along the way.
 #CLASS narration
 Tucked into the hollowed out book there is a usb flash drive
 
@@ -43,8 +43,9 @@ You remember that the word means "Friend" in Elvish#CLASS: narration
     
         - The folder has a second text file and a HTML file.#CLASS: narration
     + [Open the HTML file] #CLEAR
+        #IMAGE: imgs/html_file_unsolved.png
         It has a chart that needs a lot of input, you don't know the answer at this time. #CLASS: narration
-        -> unlocked_folder
+        -> look_back
     + [Open the second text file] #CLEAR
         -> locked_text
     + [Open the first text file] #CLEAR
@@ -64,13 +65,14 @@ You remember that the word means "Friend" in Elvish#CLASS: narration
     //clue to picture frame
         The file reads, #CLASS: narration
         #CLASS: text
-        In all of hobbitkind there were few more brave and honest than Samwise Gamgee. It was to him that came the Red Book of Westmarch, Samwise in turn gave this book to his eldest daughter Elanor Fairbairn nee Gardner who in turn read its adventures to her children. The Red Book being a memoir of the hobbits Bilbo and Frodo Baggins describing The Downfall of the Lord of the Rings and the Return of the King as seen by the Little People. 
+        In all of hobbitkind there were few more brave and honest than Samwise Gamgee. It was to him that came the Red Book of Westmarch, Samwise in turn gave this book to his eldest daughter Elanor Fairbairn, née Gardner, who in turn read its adventures to her children. The Red Book being a memoir of the hobbits Bilbo and Frodo Baggins, The Downfall of the Lord of the Rings and the Return of the King as seen by the Little People. 
         #CLASS: text
-        Elanor’s daughter,  Fíriel Fairbairn, took a keen interest in the stories and much like her grandfather became enamored with the elves and magic. Yet quite unlike her grandfather she had a desire to adventure. Folks around the Shire said she had “Tookness” about her, which is to say she had trouble keeping her nose out of trouble.
+        Elanor’s daughter,  Fíriel Fairbairn, took a keen interest in the stories and, much like her grandfather, became enamored with the elves and magic. Yet quite unlike her grandfather, she had a desire to adventure. Folks around the Shire said she had “Tookness” about her, which is to say she had trouble keeping her nose out of trouble.
         #CLASS: text
-        I only tell you this because that is where our - and her - adventure begins. You see, I believe that Fíriel set off on a magnificent adventure, and found one of the lesser rings. Following in her footsteps, I believe we can see where the ring came to rest. 
+        I only tell you this because that is where our - and her - adventure begins. You see, I believe that Fíriel set off on a magnificent adventure, and found one of the lesser rings. Following in her footsteps, I believe we can see where her ring came to rest. 
         #CLASS: text
-        Fíriel knew, through studying the Red Book, that Celebrimbor, who forged the three rings, had forged many others before it.  Before forging the seven and the nine with Sauron, Celebrimbor and the elves had crafted many lesser rings, in pursuit of creating rings of higher power. These lesser rings, like the three rings of the elves, Fíriel imagined as untainted by the dark lord and simply lost. She, not being quite as wise as the hobbits of legend, Bilbo and Frodo, and not as studied as Meriadoc Brandybuck decided this was a goal a young hobbit could achieve. After all, why not? her grandfather walked into Mordor; why shouldn’t a Fíriel be able to find a much less important, much less dangerous ring? And so, sneaking some old maps from Bag End, she left the shire.
+        Fíriel knew, through studying the Red Book, that Celebrimbor, who forged the three rings of the elves, had forged many others before it.  Before forging the seven and the nine with Sauron, Celebrimbor and the elves had crafted many lesser rings. These lesser rings, like the three rings of the elves, Fíriel imagined as untainted by the dark lord and simply lost. She, not being quite as wise as the hobbits of legend, Bilbo and Frodo, and not as studied as Meriadoc Brandybuck, decided this was a goal a young hobbit could achieve. After all, why not? Her grandfather walked into Mordor; why shouldn’t a Fíriel be able to find a much less important, much less dangerous ring? And so, sneaking some old maps from Bag End, she left the Shire.
+
         #CLASS: text
         First, she decided to find where the rings could be made. The one ring being made, and unmade, in the fires of Mt Doom, had shown that the forging of the ring required heat not known to mortal forges. So she made for Eregion, where Celebrimbor forged the rings in the shadows of Caradhas until she came upon land where the ground cracked and burst with the heat and steam from the deep.
         + [Hot showers can be steamy, check the shower]
@@ -84,7 +86,9 @@ You remember that the word means "Friend" in Elvish#CLASS: narration
             #CLEAR
             Inside the picture you find four slips of paper.#CLASS: narration
         ->picture_frame
-
+    =look_back
+        + [Look back at the folder] #CLEAR 
+            ->unlocked_folder
 === picture_frame ===
     * [Read Paper 1] #CLEAR 
         ->read_riddle_chart
@@ -212,7 +216,7 @@ You remember that the word means "Friend" in Elvish#CLASS: narration
         -> hobbit_riddle.clue3
     * [Read paper 2]
         -> map_puzzle.clue1
-    + { map_puzzle.clue1 } [Read about Champlain's key (tacked paper)]
+    + { map_puzzle.clue1 } [Read about the port to the East]
         -> map_puzzle.clue1
     * [Read paper 3]
         #CLEAR
@@ -272,7 +276,7 @@ You take the flashlight. #CLASS: narration
         -> hobbit_riddle.clue4
     *[Read Paper 2] -> map_puzzle.clue2
     TODO need map puzzle
-    + { map_puzzle.clue2 } [Read about Faith's key] ->map_puzzle.clue2     
+    + { map_puzzle.clue2 } [Read about the later days of Fíriel's adventuring] ->map_puzzle.clue2     
     * [Read Paper 3] 
     It is a piece of a map, maybe it will help you with these puzzle pieces.
         ->book3
@@ -350,7 +354,7 @@ You take the flashlight. #CLASS: narration
         -> hobbit_riddle.clue5
     * [Read Paper 2]
         ->map_puzzle.clue3
-    + { map_puzzle.clue3 } [Read about Hope's key] -> map_puzzle.clue3
+    + { map_puzzle.clue3 } [Read about the spirit of fire] -> map_puzzle.clue3
     * [Read Paper 3] 
         it's a quadrant of the map.
         ->look_back
@@ -383,7 +387,7 @@ You take the flashlight. #CLASS: narration
     + { map_puzzle.clue4 } [Read about adventures near the Brandywine] -> map_puzzle.clue4
     * [Read paper 3]
         ->firiel_ring
-    + { firiel_ring }[Read about Firiel and her ring]
+    + { firiel_ring }[Read about Fíriel and her ring]
         ->firiel_ring
         
     + [Take a break] 
@@ -537,6 +541,7 @@ You take the flashlight. #CLASS: narration
         ->book3.look_back
     = clue3
         //yellow
+        TODO this could also mean moria
         Fíriel seemed to seek old allies of hobbits, and the echoes of her tale guided my steps. Among mist-shrouded peaks, I found a sentinel of stone, guarding a kingdom's riches untold. Within its ancient embrace, where the spirit of fire once reigned, Fíriel had journeyed. #CLASS: text
         ->book4.look_back
     = clue4
