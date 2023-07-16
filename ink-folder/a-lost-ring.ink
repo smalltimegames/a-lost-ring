@@ -14,7 +14,7 @@ Having opened this book, I suppose you already know much of hobbits. A little pe
 Mr. Baggins however, is only relevant to this story because he had an adventure. And on that adventure he came across a magic ring. This magic ring, by the most unlikely of circumstances, was a ring of power, in fact it was <em>the</em> ring of power, and that was no good and led to plenty of trouble.  What you may not know, is that there are in fact, many rings that aren’t rings of power at all. Magic rings that don’t attract a lot of attention and trouble. These magic rings are spread across Middle Earth and I would very much like your help finding one.
  #CLASS: text
 If you are - like most hobbits - opposed to adventure, I promise you can help from your comfortable hobbit-hole, a book in one hand and pipe in the other. If you are more of a Took in nature, I suspect we can find something unexpected along the way.
-#CLASS narration
+#CLASS: narration
 Tucked into the hollowed out book there is a usb flash drive
 
 * [Load the drive into your computer]
@@ -65,16 +65,15 @@ You remember that the word means "Friend" in Elvish#CLASS: narration
     //clue to picture frame
         The file reads, #CLASS: narration
         #CLASS: text
-        In all of hobbitkind there were few more brave and honest than Samwise Gamgee. It was to him that came the Red Book of Westmarch, Samwise in turn gave this book to his eldest daughter Elanor Fairbairn, née Gardner, who in turn read its adventures to her children. The Red Book being a memoir of the hobbits Bilbo and Frodo Baggins, The Downfall of the Lord of the Rings and the Return of the King as seen by the Little People. 
+        In all of hobbitkind there were few more brave and honest than Samwise Gamgee. It was to him that came the Red Book of Westmarch, Samwise in turn gave this book to his eldest daughter Elanor Fairbairn, née Gardner, who in turn read its adventures to her children. The Red Book being a memoir of the hobbits Bilbo and Frodo Baggins, <em>The Downfall of the Lord of the Rings and the Return of the King as seen by the Little People</em>. 
         #CLASS: text
         Elanor’s daughter,  Fíriel Fairbairn, took a keen interest in the stories and, much like her grandfather, became enamored with the elves and magic. Yet quite unlike her grandfather, she had a desire to adventure. Folks around the Shire said she had “Tookness” about her, which is to say she had trouble keeping her nose out of trouble.
         #CLASS: text
         I only tell you this because that is where our - and her - adventure begins. You see, I believe that Fíriel set off on a magnificent adventure, and found one of the lesser rings. Following in her footsteps, I believe we can see where her ring came to rest. 
         #CLASS: text
         Fíriel knew, through studying the Red Book, that Celebrimbor, who forged the three rings of the elves, had forged many others before it.  Before forging the seven and the nine with Sauron, Celebrimbor and the elves had crafted many lesser rings. These lesser rings, like the three rings of the elves, Fíriel imagined as untainted by the dark lord and simply lost. She, not being quite as wise as the hobbits of legend, Bilbo and Frodo, and not as studied as Meriadoc Brandybuck, decided this was a goal a young hobbit could achieve. After all, why not? Her grandfather walked into Mordor; why shouldn’t a Fíriel be able to find a much less important, much less dangerous ring? And so, sneaking some old maps from Bag End, she left the Shire.
-
         #CLASS: text
-        First, she decided to find where the rings could be made. The one ring being made, and unmade, in the fires of Mt Doom, had shown that the forging of the ring required heat not known to mortal forges. So she made for Eregion, where Celebrimbor forged the rings in the shadows of Caradhas until she came upon land where the ground cracked and burst with the heat and steam from the deep.
+        First, Fíriel decided to find where the rings could be made. The one ring being made - and unmade - in the fires of Mt Doom, had shown that the forging of the ring required heat beyond that of mortal forges. So she made for Eregion, where Celebrimbor forged the rings in the shadows of Caradhras. Fíriel trekked  until she came upon land where the ground cracked and burst with the heat and steam from the deep.
         + [Hot showers can be steamy, check the shower]
             #CLEAR
             looks like a shower, with a pretty cool curtain #CLASS: narration
@@ -96,7 +95,9 @@ You remember that the word means "Friend" in Elvish#CLASS: narration
         ->read_riddle_chart
     * [Read Paper 2] -> read_fire_hint
     + { read_fire_hint } [Read about forging] -> read_fire_hint
-    * [Read Paper 3] -> read_blank_fire_page
+    * [Read Paper 3] -> jigsaw_hint
+    + { jigsaw_hint } [Read about Searching Elsewhere] ->jigsaw_hint
+    * [Read Paper 4] -> read_blank_fire_page
     + { not jigsaw_box_location }{ read_blank_fire_page } [Look at blank page] -> read_blank_fire_page
     * { read_fire_hint and read_blank_fire_page} [Hold the blank paper in over fire] #CLEAR
         #IMAGE: imgs/fire_clue.png
@@ -109,15 +110,19 @@ You remember that the word means "Friend" in Elvish#CLASS: narration
     #CLEAR
     You read the text: #CLASS: narration
         #CLASS: text
-        In the ruins of an old elvish city, Ost-in-Edhil,  Fíriel found steam spitting from the earth and fires hot enough to forge the rings. Here, by some magic, or luck, or perhaps both, she found a ring. The ring had no markings on the band. Fíriel remembered how Gandalf had discovered the ring of power. Without another thought, Fíriel cast her newfound ring into the fire. She hoped for a secret that only fire could tell. The ring, alas, did not survive the ordeal but as Fíriel stared into the flames she was inspired to search other places amongst the ruins of Ost-in-Edhil.
+        In the ruins of an old elvish city, Ost-in-Edhil,  Fíriel found steam spitting from the earth and fires hot enough to forge the rings. Here, by some magic, or luck, or perhaps both, she found a ring. The ring had no markings on the band. Fíriel remembered how Gandalf had discovered the ring of power. Without another thought, Fíriel cast her newfound ring into the fire. She hoped for a secret that only fire could tell. 
         ->picture_frame
+        
+    = jigsaw_hint
+    The ring, alas, did not survive the ordeal but as Fíriel stared into the flames she was inspired to search other places amongst the ruins of Ost-in-Edhil.  Her first inclination was to check the archives.
+    ->picture_frame
     = read_blank_fire_page
         #CLEAR
         It's blank #CLASS: narration
         ->picture_frame
     = read_riddle_chart
         #CLEAR
-        It contains a chart discusses hobbits On the reverse side there are five sentences explaining things about them.#CLASS: narration
+        It contains a chart discusses hobbits. On the reverse side there are five sentences explaining things about them.#CLASS: narration
         #IMAGE: imgs/lotr_riddle.png
         ->hobbit_riddle.clue1
 
@@ -168,7 +173,7 @@ You remember that the word means "Friend" in Elvish#CLASS: narration
     = water_hint
         #CLEAR
         #CLASS: text
-        Fíriel went to the ruins of the library of Ost-in-Edhil digging for scraps of paper and remnants of old books and scrolls. There she found out more about the one ring, Isildur’s Bane. After taking the ring, Isildur and his people were waylaid by the orcs of the mountains. In Isildur’s attempt to flee he put on the ring, and dove into the river Anduin. Engulfed by the great waters he was revealed to his enemy. Isildur was slain and the ring sank in the waters, lost and forgotten.
+        Fíriel went to the ruins of the library of Ost-in-Edhil, where she dug for scraps of paper and remnants of old books and scrolls. There she found out more about the one ring, Isildur’s Bane. After taking the ring, Isildur and his people were waylaid by the orcs of the mountains. In Isildur’s attempt to flee, he put on the ring and dove into the river Anduin. Engulfed by the great waters, he was revealed to his enemy. Isildur was slain and the ring sank in the waters, lost and forgotten.
             ->look_back
     = read_blank_water_page
         It's blank #CLASS: narration
@@ -176,7 +181,7 @@ You remember that the word means "Friend" in Elvish#CLASS: narration
     = book2_hint
         #CLEAR
          #CLASS: text
-    	Fíriel felt as if Ost-in-Edhil held no more usefulness for her and decided to venture Eastward, over Caradhas. She packed her things but one from the Shire doesn’t experience the desolate cold of the mountain pass. She soon realized her pack was missing one very important thing.
+    	Fíriel felt as if Ost-in-Edhil held no more usefulness for her and decided to venture Eastward, over Caradhas. She packed her things, but hobbits from the Shire have rarely experienced the desolate cold of the mountain pass. She soon realized her pack was missing one very important thing.
         -> look_back
     = look_back
         + [Look Back at the Box] #CLEAR 
@@ -246,9 +251,9 @@ You remember that the word means "Friend" in Elvish#CLASS: narration
     = black_light_clue
         #CLEAR
         #CLASS: text
-        Without proper attire to fend off the snow on the pass of Caradhras, she would have to make for the gap of Rohan. Her grandfather had never met the horsemen of Rohan and she had been excited to do so. She made a wide berth around Isengard, and its tower Orthanc. Her route was made even wider still by her desire to avoid the trees surrounding it. The fabled trees of Fangorn had moved here to form Treegarth of Orthanc. With a bit of luck, she came across riders of Rohan who took her to Edoras. She was soon brought to the king, Elfwine. Elfwine had heard much about the bravery of the Little People from his father Eomer, specifically the valor of Meriadoc Brandybuck. 
+        Without proper attire to fend off the snow on the pass of Caradhras, she would have to make for the gap of Rohan. Her grandfather had never met the horsemen of Rohan and she was excited to do so. She made a wide berth around Isengard and its tower Orthanc. Her route was made even wider still by her desire to avoid the trees surrounding it. The fabled trees of Fangorn had moved here to form Treegarth of Orthanc. With a bit of luck, she came across riders of Rohan who took her to Edoras. She was soon brought to the king, Elfwine. Elfwine had heard much about the bravery of the Little People from his father Eomer, specifically the valor of Meriadoc Brandybuck. 
         #CLASS: text
-        Fíriel had never met anyone as important as a king before. Of course she had met Merry, Pippin and her grandpa Sam, who were all famous in their own rights. Holding positions of Master of Buckland, Thain of the Shire, and Mayor of the Shire, respectively. In another stroke of luck, the king desired nothing more than to hear of these shirefolk. Fíriel spoke at length of the fellowship, recalling all she could from the Red Book. She told Elfwine of the hobbits’ exploits during the War of the Ring, Sam and Frodo with the ring, and Pippin’s journey to Minas Tirith after he left Rohan.   She also spoke of her connection to each of the four hobbits, her grandfather Sam had introduced her to both Pippin and Merry before Sam himself had gone West to follow Frodo into the Undying Lands. Telling the tale of the one ring led into Fíriel telling Elfwine about her current quest.  Her desire to carry out her journey to find a lesser ring was reinvigorated. 
+        Fíriel had never met anyone as important as a king before. Of course she had met Merry, Pippin and her grandfather, Sam, who were all famous in their own rights, holding positions of Master of Buckland, Thain of the Shire, and Mayor of the Shire, respectively. In another stroke of luck, the king desired nothing more than to hear of these shirefolk. Fíriel spoke at length of the fellowship, recalling all she could from the Red Book. She told Elfwine of the hobbits’ exploits during the War of the Ring, Sam and Frodo with the ring, and Pippin’s journey to Minas Tirith after he left Rohan.   She also spoke of her connection to each of the four hobbits, her grandfather Sam had introduced her to both Pippin and Merry before Sam himself had gone West to follow Frodo into the Undying Lands. Telling the tale of the one ring led into Fíriel telling Elfwine about her current quest.  Her desire to carry out her journey to find a lesser ring was reinvigorated.
         + { flashlight } [Shine the blacklight at the paper]
             ->black_light_clue_solved
         + [Look back at book contents]
@@ -291,9 +296,9 @@ You take the flashlight. #CLASS: narration
         
     =trek_to_rivendell
         #CLASS: text
-        The Rohirrim knew not of the lesser rings and although they bid Fíriel to stay, to hear more of her tales of the Fellowship and the four hobbits she knew so well, she prepared to leave. Rohan was to send a small delegation to Rivendell, to trade with the few elves who remained. Since Elfwine had become Lord of the Mark he had opened more trading routes with Elves, Dwarves and the Men of Gondor. His father, Eomer’s, stories of the fellowship had long since inspired him to be more open to contact with the other regions. It was with a heavy heart that Elfwine sent his new friend to Rivendell, but he wished her luck and bid her come back someday.
+         The Rohirrim knew not of the lesser rings and although they wished to hear more of Fíriel’s tales of the Fellowship and the four hobbits she knew so well, and they bid her to stay, she nevertheless prepared to leave. Rohan was to send a small delegation to Rivendell, to trade with the few elves who remained. Eomer’s stories of the fellowship had long since inspired Elfwine to be more open to contact with the other regions. Since Elfwine had become Lord of the Mark, he had opened more trading routes with Elves, Dwarves, and the Men of Gondor. It was with a heavy heart that Elfwine sent his new friend to Rivendell, but he wished her luck and bid her come back someday.
         #CLASS: text
-        Compared to her previous trek across Eriador, traveling by horseback to Riverdell passed quickly. She found herself awestruck amongst the elves, even though only a few remained there. The elves let her stay in a room that used to belong to Bilbo Baggins. Some of it had been fixed to hobbit size.  At first, Fíriel kept to herself in Rivendell, mostly exploring the ancient city and watching the elves with a sense of wonder. She also explored her room. Finding old papers of Bilbo’s, many nonsense poems and ramblings of the old hobbit. She amongst the mess of papers she also found a note in elvish, probably possibly not from Bilbo but he was known to know a bit of Elvish.
+        Compared to her previous trek across Eriador, traveling by horseback to Riverdell passed quickly. She found herself awestruck amongst the few remaining elves, who let her stay in a room that once belonged to Bilbo Baggins. Some of it had been made to hobbit size.  At first, Fíriel kept to herself in Rivendell, mostly exploring the ancient city and watching the elves with a sense of wonder. She also explored her room, wherein she found old papers left behind by Bilbo. Amongst  the mess of papers were many nonsense poems and ramblings of the old hobbit. Firiel also found a note in Elvish, perhaps a musing of Bilbo or perhaps left by one of the Elves.
         -> look_back
     =tengwar_message
         #IMAGE: imgs/tengwarmessage.png
@@ -369,9 +374,11 @@ You take the flashlight. #CLASS: narration
         #CLEAR
         It reads: #CLASS: narration
         #CLASS: text
-        Fíriel soon became accustomed to her way of life in Rivendell, the elves, however few, were very hospitable and the food and wine was a delight. Listening to songs and poems recited in the Hall of Fire after a feast became Fíriel’s favored pastime. The elves enjoyed having another hobbit who so thoroughly enjoyed their arts. They had not seen the likes of it since Bilbo had lived there.  Fíriel began to recite some of Bilbo’s poems and songs and even wrote a few of her own while she stayed there.
-    	Later, as most hobbits are want to do, she began to long for the Shire. The beauty, arts and timeless nature of the elves was inspiring. Of course, she missed the food, pipeweed and ale of the Shire. But what she truly missed, was her kin and something about the timeless nature of Rivendell always left a hole in a hobbits heart. While the elves have a similar peace and quiet, the Shire surrounds the hobbits with what they truly love: things that grow. For all hobbits hearts, in some part, feel a deep connection to good tilled earth. 
-    	The elves planned a feast for her departure. With a long table piled high with food, even in a timeless place like Rivendell, the merrymaking did not last long enough. As the food disappeared, lord of Rivendell, Elrohir, son of Elrond approached Fíriel's chair. He bore a gift beyond her wildest dreams. The Elves knew of her quest for a lesser ring, and brought her one. A relic from time passed, crafted in Ost-in-Edhil. With this ring, plus a entire pony’s saddlebag full of other gifts, Fíriel left for the Shire. To her family home at Bag End.
+        Fíriel soon became accustomed to her way of life in Rivendell; the elves, however few, were very hospitable and the food and wine were a delight. Listening to songs and poems recited in the Hall of Fire after a feast became Fíriel’s favored pastime. The elves enjoyed having as a guest another hobbit who so thoroughly enjoyed their arts. They had not seen the likes of it since Bilbo had lived there.  Fíriel began to recite some of Bilbo’s poems and songs and even wrote a few of her own during her stay.
+        #CLASS: text
+    	The beauty, arts, and timeless nature of the elves was inspiring, but as time went on,  as most hobbits are wont to do, Fíriel began to long for the Shire. Of course she missed the food, pipeweed, and ale of the Shire. But what she truly missed was her kin, and something about the timeless nature of Rivendell always left a hole in a hobbit’s heart. While the home of the elves has a similar peace and quiet, the Shire surrounds the hobbits with what they truly love: things that grow. For all hobbits’ hearts, in some part, feel a deep connection to good tilled earth. 
+    	#CLASS: text
+    	The elves planned a feast for Fíriel’s departure, the long ornate tables piled high with food. Even in a timeless place like Rivendell, the merrymaking did not last long enough. As the food disappeared, the lord of Rivendell, Elrohir, son of Elrond, approached Fíriel's chair. He bore a gift beyond her wildest dreams. The Elves knew of her quest for a lesser ring, and brought her one: a relic from time past, crafted in Ost-in-Edhil. With this ring, as well as a pony’s saddlebag full of other gifts, Fíriel left for the Shire. The journey back to her family home at Bag End had begun.
             -> look_back
     =look_back
         + [Look back at the Return of the King]
@@ -399,8 +406,9 @@ You take the flashlight. #CLASS: narration
         ->tin
     =firiel_ring
     #CLASS: text
-        Fíriel alternated between wearing the ring on her finger and wearing it around her neck. It seems to fit her finger perfectly no matter which finger she wore it on. The ring did not seem to give her any powers, no invisibility, no control over men or other races. But when she put it on she did feel the pride which came with completing her quest to discover the ring.
-        So I have read in her writings which were never as consistent after she returned to Bag End. She did yet venture out from the Shire with her ring. Perhaps she left it on one of her adventures, at the end, it was buried with her, or perhaps she ventured to the Undying Lands, her friendship with the elves would have surely earned her a journey. I have compiled some of her writing snippets but I haven’t yet been able to find the ring's resting place.
+        Fíriel alternated between wearing the ring on her finger and wearing it around her neck. It seems to fit her finger perfectly no matter which finger it was placed. The ring did not seem to give her any powers – no invisibility, no control over men or other races. But when she put it on she did feel the pride which came with completing her quest to discover the ring.
+    #CLASS: text
+        So I have read in her writings which were never as consistent after she returned to Bag End. She did yet venture out from the Shire with her ring, though it is not known what became of the ring. Perhaps she left it on one of her adventures,, perhaps at the end it was buried with her, or perhaps she ventured with it to the Undying Lands; her friendship with the elves would have surely earned her a journey. I have compiled some of her writings but I have not yet been able to determine the ring's resting place.
         ->look_back
 
         
