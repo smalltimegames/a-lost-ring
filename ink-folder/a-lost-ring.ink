@@ -1,3 +1,5 @@
+INCLUDE puzzles.ink
+
 # title: A Lost Ring
 # theme: dark
 # author: Matt K
@@ -20,7 +22,8 @@ Tucked into the hollowed out book there is a usb flash drive
 * [Load the drive into your computer]
 #CLEAR
     ->usb_drive
-+ { flashlight } [Shine the flashlight at the book]->blacklight_puzzle.clue1
++ { flashlight } [Shine the flashlight at the book]->blacklight_puzzle.clue1 ->
+    ->book1
 + { jigsaw_box } [Take a break and thing about what you've discovered so far] -> break
     
 === usb_drive===
@@ -220,9 +223,11 @@ You remember that the word means "Friend" in Elvish#CLASS: narration
     * [Read paper 1]
         -> hobbit_riddle.clue3
     * [Read paper 2]
-        -> map_puzzle.clue1
+        -> map_puzzle.clue1 ->
+        ->look_back
     + { map_puzzle.clue1 } [Read about the port to the East]
-        -> map_puzzle.clue1
+        -> map_puzzle.clue1 ->
+        ->look_back
     * [Read paper 3]
         #CLEAR
         #IMAGE: imgs/map_quadrant_2.png
@@ -237,7 +242,8 @@ You remember that the word means "Friend" in Elvish#CLASS: narration
         -> black_light_clue_solved
     + { flashlight } [Shine the blacklight at the book]
         TODO need book clues
-        -> blacklight_puzzle.clue2
+        -> blacklight_puzzle.clue2 ->
+        -> book2
     * [Examine the flashlight]
         It's a blacklight. The batteries seem to work.#CLASS: narration
         * * [Take the flashlight] 
@@ -279,9 +285,13 @@ You take the flashlight. #CLASS: narration
     The Two Towers contains a red peg, and six pieces of paper.#CLASS: narration
     * [Read paper 1]
         -> hobbit_riddle.clue4
-    *[Read Paper 2] -> map_puzzle.clue2
+    *[Read Paper 2] 
+        -> map_puzzle.clue2 ->
+        -> look_back
     TODO need map puzzle
-    + { map_puzzle.clue2 } [Read about the later days of Fíriel's adventuring] ->map_puzzle.clue2     
+    + { map_puzzle.clue2 } [Read about the later days of Fíriel's adventuring] 
+        -> map_puzzle.clue2 ->
+        -> look_back
     * [Read Paper 3] 
     It is a piece of a map, maybe it will help you with these puzzle pieces.
         ->book3
@@ -289,7 +299,9 @@ You take the flashlight. #CLASS: narration
     * [Read Paper 4] -> trek_to_rivendell
     + { trek_to_rivendell } [Read about Fíriel going to Rivendell] -> trek_to_rivendell
     * [Read Paper 5] -> bilbos_poem
-    + { flashlight } [Shine the flashlight at the book]->blacklight_puzzle.clue3
+    + { flashlight } [Shine the flashlight at the book]
+        -> blacklight_puzzle.clue3 ->
+        -> book3
     + [Take a break] 
         You take a break and think about everything that's happened. #CLASS: narration
         -> break
@@ -358,14 +370,19 @@ You take the flashlight. #CLASS: narration
     * [Read paper 1]
         -> hobbit_riddle.clue5
     * [Read Paper 2]
-        ->map_puzzle.clue3
-    + { map_puzzle.clue3 } [Read about the spirit of fire] -> map_puzzle.clue3
+        -> map_puzzle.clue3 ->
+        -> look_back
+    + { map_puzzle.clue3 } [Read about the spirit of fire] 
+        -> map_puzzle.clue3 ->
+        -> look_back
     * [Read Paper 3] 
         it's a quadrant of the map.
         ->look_back
     * [Read Paper 4] -> tin_clue
     + { tin_clue } [Read about the Return to the Shire] ->tin_clue
-    + { flashlight } [Shine the flashlight at the book]->blacklight_puzzle.clue4
+    + { flashlight } [Shine the flashlight at the book]
+        -> blacklight_puzzle.clue4 ->
+        -> book4
     + [Take a break] 
         You take a break and think about everything that's happened. #CLASS: narration
         -> break
@@ -390,8 +407,12 @@ You take the flashlight. #CLASS: narration
     Similar to the books, you find a blue peg and three pieces of paper. #CLASS: narration
      * [Read paper 1]
         -> hobbit_riddle.clue6
-    * [Read paper 2] -> map_puzzle.clue4
-    + { map_puzzle.clue4 } [Read about adventures near the Brandywine] -> map_puzzle.clue4
+    * [Read paper 2] 
+        -> map_puzzle.clue4 ->
+        -> look_back
+    + { map_puzzle.clue4 } [Read about adventures near the Brandywine] 
+        -> map_puzzle.clue4 ->
+        -> look_back
     * [Read paper 3]
         ->firiel_ring
     + { firiel_ring }[Read about Fíriel and her ring]
@@ -455,7 +476,9 @@ You take the flashlight. #CLASS: narration
     + { tin } [Look at the tin] ->tin
     + { qr_code.directions }[Look at the directions from the website]
         ->qr_code.directions
-    
+    + { book1 }{  book2 }{ book3 }{ book4 }{ flashlight }
+        -> blacklight_puzzle.all_clues ->
+        -> break
     = html_clue
         Champaign discovered a ritual performed by those who lived on the coast. Although he never partook in the ritual, it was said to grant unnatural long life. When you find your bearings, you will find the one from the coast and ask for "the blood of the ancients".  #CLASS: text
         +[Look at something else]
@@ -491,75 +514,6 @@ You take the flashlight. #CLASS: narration
         -> break
 
 
-=== hobbit_riddle ===
-   
-    = clue1
-        -> picture_frame
-    = clue2
-        -> jigsaw_box
-    = clue3
-        -> book2
-    = clue4
-        -> book3
-    = clue5
-        -> book4
-    = clue6
-        -> tin
-     = enter_info
-        { clue1 and clue2 and clue3 and clue4 and clue5 and clue6:
-               You have filled out the entirety of the chart. #CLASS: narration
-               ->complete
-           - else:
-                You fill in all the information you have. #CLASS: narration
-                -> break
-        }
-    = complete
-        -> break
-        
-=== blacklight_puzzle ===
-   
-    = clue1
-        -> book1
-    = clue2
-        -> book2
-    = clue3
-        -> book3
-    = clue4
-        -> book4
-     = enter_info
-        { clue1 and clue2 and clue3 and clue4:
-               You have filled out the entirety of the chart. #CLASS: narration
-               ->complete
-           - else:
-                You fill in all the information you have. #CLASS: narration
-                -> break
-        }
-    = complete
-        -> break
-=== map_puzzle ===
-    = clue1
-        #CLEAR
-        // green
-        As I sat by the hearth, my curiosity sparked by Fíriel's tales, I found myself yearning for tidings of her fate. No mention of her departure or passing could be found within the annals of the Shire. I set forth to the port, where whispers suggested she may have set sail for the Undying Lands. In their archives, time slipped away as I combed through faded pages, searching for answers. #CLASS: text
-        -> book2.look_back
-    = clue2
-        //Red
-        TODO perspective on this is wrong
-        In later days, Fíriel ventured far and wide, exploring the far reaches of Middle-earth. Westward she ventured, passing Gladden fields, lightly stepping into Fangorn, and even venturing through the shadowed paths of Mirkwood. Few had ventured as far, save for the boldest of souls like Gandalf and King Elessar, known to us hobbits as Strider. Her wanderlust carried her to the very end of Rhovanion, before she heeded the call to turn back, leaving her footprints on the edge of the known world. #CLASS: text
-        ->book3.look_back
-    = clue3
-        //yellow
-        TODO this could also mean moria
-        Fíriel seemed to seek old allies of hobbits, and the echoes of her tale guided my steps. Among mist-shrouded peaks, I found a sentinel of stone, guarding a kingdom's riches untold. Within its ancient embrace, where the spirit of fire once reigned, Fíriel had journeyed. #CLASS: text
-        ->book4.look_back
-    = clue4
-        //blue
-        TODO perspective is wrong
-        Fíriel's sense of adventure was more grand than even Bilbo’s. She was the talk of the Shire, why I imagine ever her great-grandad the Gaffer might have said, “she’s cracked, that lass” supposing he was still at that time.  But not all of Fíriel's travels were beyond the grasp of hobbits.  She once wrote of walking to the head of the Brandywine River.  Seeking solace in the beauty of the lake and its tranquil shores.#CLASS: text
-        ->tin.look_back
-    = complete
-        You draw lines to connect the pins. #CLASS: narration
-        ->break.look_at_map
 
 === pin_map ===
     = pin1
