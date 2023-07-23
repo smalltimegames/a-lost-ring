@@ -199,18 +199,15 @@ You remember that the word means "Friend" in Elvish#CLASS: narration
     }
     Enter your discovery from the map. #CLASS: text
         + [Look back at the jigsaw box] -> jigsaw_box
-        * { map_puzzle.complete }[Enter the word "Sigue Noc"]
+        * { map_puzzle.complete }[Enter the word "Bree"]
             -> directions
         + { break } [Take a break] -> break
     
     = directions
-        From rd meets walkway
-        344 ft E
-        131 ft N
-        500 ft E
-        208 ft N
-        84  ft E
-        Open Door
+    // Have video from Billy Boyd Here
+        #CLEAR 
+        #IMAGE: imgs/treasure_map.jpg
+        You found a treasure map. It looks like it is near your home.
         + [Take a break] 
             -> break
 
@@ -299,6 +296,7 @@ You take the flashlight. #CLASS: narration
     * [Read Paper 4] -> trek_to_rivendell
     + { trek_to_rivendell } [Read about Fíriel going to Rivendell] -> trek_to_rivendell
     * [Read Paper 5] -> bilbos_poem
+    + { bilbos_poem }[Read Bilbo's Poem] -> bilbos_poem
     + { flashlight } [Shine the flashlight at the book]
         -> blacklight_puzzle.clue3 ->
         -> book3
@@ -440,15 +438,16 @@ You take the flashlight. #CLASS: narration
 === break === 
     What will you do? #CLASS: narration
     //TODO have to finish the last clues
-    + { qr_code.directions }{ html_clue }[Head outside] -> head_outside
+    + { qr_code.directions }{ html_clue }[Head home where the clues seem to be pointing you] -> head_home
     + [ Look at the Hobbit chart]
         #CLEAR
         #IMAGE: imgs/lotr_riddle.png
-        You closely examine the chart, it has pictures of five different Native Americans and a 5 x 5 grid beneath them. #CLASS: narration
+        You closely examine the chart it has a 5 x 6 grid about Hobbits. #CLASS: narration
         + + [ Look at something else ]
             -> break
-        + + { not hobbit_riddle.complete }[ Add in all the information about the natives you have collected so far ] 
-            ->hobbit_riddle.enter_info
+        + + { not hobbit_riddle.complete }[ Add in all the information about the hobbits you have collected so far ]
+            ->hobbit_riddle.enter_info ->
+            -> break
         + + { hobbit_riddle.complete } [You could probably enter this information in that html file] 
             -> break
     + [ Open the html file on your computer ]
@@ -480,7 +479,15 @@ You take the flashlight. #CLASS: narration
         -> blacklight_puzzle.all_clues ->
         -> break
     = html_clue
-        Champaign discovered a ritual performed by those who lived on the coast. Although he never partook in the ritual, it was said to grant unnatural long life. When you find your bearings, you will find the one from the coast and ask for "the blood of the ancients".  #CLASS: text
+        You are shown the text: #CLASS: narration
+        "Three Rings for the Elven-kings under the sky,
+            Seven for the Dwarf-lords in their halls of stone,
+            Nine for Mortal Men doomed to die,
+            One for the Dark Lord on his dark throne
+            In the Land of Mordor where the Shadows lie.
+               One Ring to rule them all, One Ring to find them,
+               One Ring to bring them all, and in the darkness bind them
+            In the Land of Mordor where the Shadows lie."  #CLASS: text
         +[Look at something else]
         -> break
     = look_at_map
@@ -498,8 +505,21 @@ You take the flashlight. #CLASS: narration
             #CLEAR
             #IMAGE: imgs/x_map.png
             The map is complete and an X points to the village of "Bree" #CLASS: narration
+            TODO CHANGE ME
             #IMAGE: imgs/sigue_noc.png
         }
+        + + [Read the first map clue]
+            -> map_puzzle.clue1 ->
+            ->look_at_map
+        + + [Read the second map clue]
+            -> map_puzzle.clue2 ->
+            ->look_at_map
+        + + [Read the third map clue]
+            -> map_puzzle.clue3 ->
+            ->look_at_map
+        + + [Read the fourth map clue]
+            -> map_puzzle.clue3 ->
+            ->look_at_map
         * * { pin_map > 3 } [Connect the pins to make an X]
             ->map_puzzle.complete
         * * { map_puzzle.clue1 } [Place a peg on the Grey Havens]
@@ -537,46 +557,22 @@ You take the flashlight. #CLASS: narration
         ->break
 
         
-=== head_outside ===
-    { not compass:
-        You have no idea what direction to head, if only there was some way to know North from South. You head back into the house.
-            -> break
-    }
-    +[Walk to the Road]
-    +[Head back in the house] -> break
-    - You head down the road. #CLASS: narration
-    +[Walk 344 ft East]
-    +[Head back to the house] -> break
-    - You walk a little while. #CLASS: narration
-    +[Walk 131 ft North]
-    +[Head back to the house] -> break
-    - You walk a little more. #CLASS: narration
-    +[Walk 500 ft East]
-    +[Head back to the house] -> break
-    - You walk a little more. #CLASS: narration
-    +[Walk 208 ft North]
-    +[Head back to the house] -> break
-    - You walk a little more. #CLASS: narration
-    +[Walk 84 ft East]
-    +[Head back to the house] -> break
-    - You walk a until you arrive at a door.#CLASS: narration
-    +[Open the door]
-    +[Head back to the house] -> break
-    - #CLEAR 
-    You swing open the door. Inside a bartender calls a greeting to you.#CLASS: narration
-    +[Greet the bartender]
-    - The bartender greets you back and asks if there's anything special you'd like to drink#CLASS: narration
-    +[Order "the Blood of the Ancients"]
-    -"the Blood of the Ancients." 
-    You feel slightly silly saying something like that to a modern bartender but the bartender smiles knowingly.#CLASS: narration
-    "Coming right up," she responds. 
-    Soon, she returns with a bright blue cocktail #CLASS: narration
+=== head_home ===
+    Although it takes a long time, you make the journey home. #CLASS:narration
+    +[Using the map, find the x]
+        #IMAGE: imgs/treasure_map.jpg
+        You walk towards the spot on the map showing an "X" and in that area you see a flower in bloom. #CLASS:narration
+        + + [Head back into the house and take a break] -> break
+        * * [Dig around the flower to see if you can find something] #CLEAR 
+            After looking around the flower, you notice that it's just in a pot in the ground. Pulling up the pot, you find a box beneath. It's locked with a combination of 4 numbers. 
+            TODO there should be a hint about the numbers
+                + + + [In a attempt at a guess you put 3791, the number of rings]
+                #CLASS: narration
+                To your surprise, the lock opens, and inside you find a ring! it appears you have completed your journey. 
+                ->END
     
-    The glass has a picture of Samuel de Champlain on it, the bartender also presents you with a box. #CLASS: narration
-    * [Open the box]
-    -The box contains a letter and a watch. #CLASS: narration
-    * [Read the letter]
-    TODO fix grammar here
+     
+    = note
     - #CLASS: text
         You've found the secret of Champlain - an elixir of life. Nobody knows if drinking it will prolong life but it has some near-magical benefits. It was not known at the time, but the blood of Limulus polyphemus would help develop a pathway to cleaner food and medicine across the world, thus saving millions of lives.<br>This watch is a mere trinket. A gift from me to you. My journey to find Champlain's treasure has ended. Some days I imagine there is still something out there but, for me, my new journey is living a life as full as that of my great grandfather, Samuel de Champlain.
     
