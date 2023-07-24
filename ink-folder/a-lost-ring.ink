@@ -13,7 +13,7 @@ Inside the book you find a folded up note note. It appears old and handwritten.
  #CLASS: text
 Having opened this book, I suppose you already know much of hobbits. A little people, with no beards, rough hairy feet, and quite round in the middle. They are fond of pipe weed and even fonder of breakfast, lunch, and dinner. Especially second breakfast, lunch, and dinner. What they aren’t fond of is adventure or doing anything unexpected. Bilbo Baggins was a hobbit who did things unexpected and had himself a grand adventure. And he has had nothing but trouble since. Trouble and a vast amount of treasure. Hobbits who didn’t know Bilbo would have assumed he was a Took (and he was, although not in name) as Tooks have a penchant for trouble.
  #CLASS: text
-Mr. Baggins however, is only relevant to this story because he had an adventure. And on that adventure he came across a magic ring. This magic ring, by the most unlikely of circumstances, was a ring of power, in fact it was <em>the</em> ring of power, and that was no good and led to plenty of trouble.  What you may not know, is that there are in fact, many rings that aren’t rings of power at all. Magic rings that don’t attract a lot of attention and trouble. These magic rings are spread across Middle Earth and I would very much like your help finding one.
+    I only mention Mr. Baggins because he had an adventure. And on that adventure he came across a magic ring. This magic ring, by the most unlikely of circumstances, was a ring of power, in fact it was <em>the</em> ring of power, and that was no good and led to plenty of trouble.  What you may not know, is that there are in fact, many rings that aren’t rings of power at all. Magic rings that don’t attract a lot of attention and trouble. These magic rings are spread across Middle Earth and I would very much like your help finding one.
  #CLASS: text
 If you are - like most hobbits - opposed to adventure, I promise you can help from your comfortable hobbit-hole, a book in one hand and pipe in the other. If you are more of a Took in nature, I suspect we can find something unexpected along the way.
 #CLASS: narration
@@ -70,9 +70,9 @@ You remember that the word means "Friend" in Elvish#CLASS: narration
         #CLASS: text
         In all of hobbitkind there were few more brave and honest than Samwise Gamgee. It was to him that came the Red Book of Westmarch, Samwise in turn gave this book to his eldest daughter Elanor Fairbairn, née Gardner, who in turn read its adventures to her children. The Red Book being a memoir of the hobbits Bilbo and Frodo Baggins, <em>The Downfall of the Lord of the Rings and the Return of the King as seen by the Little People</em>. 
         #CLASS: text
-        Elanor’s daughter,  Fíriel Fairbairn, took a keen interest in the stories and, much like her grandfather, became enamored with the elves and magic. Yet quite unlike her grandfather, she had a desire to adventure. Folks around the Shire said she had “Tookness” about her, which is to say she had trouble keeping her nose out of trouble.
+       Elanor’s daughter,  Fíriel Fairbairn, took a keen interest in the stories and, much like her grandfather, became enamored with the elves and magic. Yet quite unlike her grandfather, she craved adventure. Folks around the Shire said she had “Tookness” about her, which is to say she had trouble keeping her nose out of trouble.
         #CLASS: text
-        I only tell you this because that is where our - and her - adventure begins. You see, I believe that Fíriel set off on a magnificent adventure, and found one of the lesser rings. Following in her footsteps, I believe we can see where her ring came to rest. 
+        I only tell you this because that is where our - and her - journey begins. You see, I believe that Fíriel set off on a magnificent adventure, and found one of the lesser rings. Following in her footsteps, I believe we can see where her ring came to rest. 
         #CLASS: text
         Fíriel knew, through studying the Red Book, that Celebrimbor, who forged the three rings of the elves, had forged many others before it.  Before forging the seven and the nine with Sauron, Celebrimbor and the elves had crafted many lesser rings. These lesser rings, like the three rings of the elves, Fíriel imagined as untainted by the dark lord and simply lost. She, not being quite as wise as the hobbits of legend, Bilbo and Frodo, and not as studied as Meriadoc Brandybuck, decided this was a goal a young hobbit could achieve. After all, why not? Her grandfather walked into Mordor; why shouldn’t a Fíriel be able to find a much less important, much less dangerous ring? And so, sneaking some old maps from Bag End, she left the Shire.
         #CLASS: text
@@ -124,10 +124,14 @@ You remember that the word means "Friend" in Elvish#CLASS: narration
         It's blank #CLASS: narration
         ->picture_frame
     = read_riddle_chart
-        #CLEAR
-        It contains a chart discusses hobbits. On the reverse side there are five sentences explaining things about them.#CLASS: narration
-        #IMAGE: imgs/lotr_riddle.png
-        ->hobbit_riddle.clue1
+        -> hobbit_riddle.clue1 ->
+        -> look_back
+        
+        
+    =look_back
+        +[Look back at the picture frame]
+            #CLEAR
+            ->picture_frame
 
 === jigsaw_box_location ====
     You look under all of your bookshelves and eventually find a mysterious box. #CLASS: narration
@@ -140,7 +144,8 @@ You remember that the word means "Friend" in Elvish#CLASS: narration
     * [Read paper 1]
         It is 5 sentences discussing the hobbits.#CLASS: narration
         ++ [Look back at the box]#CLEAR
-        -> hobbit_riddle.clue2
+        -> hobbit_riddle.clue2 ->
+        -> look_back
     * [Read paper 2]
         #IMAGE: imgs/map_quadrant_1.png
         #CLASS: narration
@@ -218,7 +223,8 @@ You remember that the word means "Friend" in Elvish#CLASS: narration
         It's a green peg.
         -> look_back
     * [Read paper 1]
-        -> hobbit_riddle.clue3
+        -> hobbit_riddle.clue3 ->
+        -> look_back
     * [Read paper 2]
         -> map_puzzle.clue1 ->
         ->look_back
@@ -230,7 +236,7 @@ You remember that the word means "Friend" in Elvish#CLASS: narration
         #IMAGE: imgs/map_quadrant_2.png
         #CLASS: narration
         It is a piece of a map, maybe it will help you with these puzzle pieces.
-        ->book2
+        ->look_back
     * [Read paper 4]
         ->black_light_clue
     + { not flashlight }{ black_light_clue }[Read about Rohan]
@@ -241,9 +247,9 @@ You remember that the word means "Friend" in Elvish#CLASS: narration
         TODO need book clues
         -> blacklight_puzzle.clue2 ->
         -> book2
-    * [Examine the flashlight]
+    * [Examine the flashlight] #CLEAR
         It's a blacklight. The batteries seem to work.#CLASS: narration
-        * * [Take the flashlight] 
+        * * [Take the flashlight] #CLEAR
         -> flashlight
 
     
@@ -254,21 +260,22 @@ You remember that the word means "Friend" in Elvish#CLASS: narration
     = black_light_clue
         #CLEAR
         #CLASS: text
-        Without proper attire to fend off the snow on the pass of Caradhras, she would have to make for the gap of Rohan. Her grandfather had never met the horsemen of Rohan and she was excited to do so. She made a wide berth around Isengard and its tower Orthanc. Her route was made even wider still by her desire to avoid the trees surrounding it. The fabled trees of Fangorn had moved here to form Treegarth of Orthanc. With a bit of luck, she came across riders of Rohan who took her to Edoras. She was soon brought to the king, Elfwine. Elfwine had heard much about the bravery of the Little People from his father Eomer, specifically the valor of Meriadoc Brandybuck. 
+        Without proper attire to fend off the snow on the pass of Caradhras, Fíriel made for the gap of Rohan. Her grandfather had never met the horsemen of Rohan and she was excited to do so. She made a wide berth around Isengard and its tower Orthanc. Her route was made even wider still by her desire to avoid the trees surrounding it. The fabled trees of Fangorn had moved here to form Treegarth of Orthanc. With a bit of luck, she came across riders of Rohan who took her to Edoras. She was soon brought to the king, Elfwine. Elfwine had heard much about the bravery of the Little People from his father Eomer, specifically the valor of Meriadoc Brandybuck. 
         #CLASS: text
-        Fíriel had never met anyone as important as a king before. Of course she had met Merry, Pippin and her grandfather, Sam, who were all famous in their own rights, holding positions of Master of Buckland, Thain of the Shire, and Mayor of the Shire, respectively. In another stroke of luck, the king desired nothing more than to hear of these shirefolk. Fíriel spoke at length of the fellowship, recalling all she could from the Red Book. She told Elfwine of the hobbits’ exploits during the War of the Ring, Sam and Frodo with the ring, and Pippin’s journey to Minas Tirith after he left Rohan.   She also spoke of her connection to each of the four hobbits, her grandfather Sam had introduced her to both Pippin and Merry before Sam himself had gone West to follow Frodo into the Undying Lands. Telling the tale of the one ring led into Fíriel telling Elfwine about her current quest.  Her desire to carry out her journey to find a lesser ring was reinvigorated.
-        + { flashlight } [Shine the blacklight at the paper]
-            ->black_light_clue_solved
+        Fíriel had never met anyone as important as a king before. Of course she had met Merry, Pippin and her grandfather, Sam, who were all famous in their own rights, holding positions of Master of Buckland, Thain of the Shire, and Mayor of the Shire, respectively. In another stroke of luck, the king wanted nothing more than to hear of these shirefolk. Fíriel spoke at length of the fellowship, recalling all she could from the Red Book. She told Elfwine of the hobbits’ exploits during the War of the Ring, Sam and Frodo with the ring, and Pippin’s journey to Minas Tirith after he left Rohan.   She also spoke of her connection to each of the four hobbits, her grandfather Sam had introduced her to both Pippin and Merry before Sam himself had gone West to follow Frodo into the Undying Lands. Telling the tale of the one ring led into Fíriel telling Elfwine about her current quest. As she spoke, her eyes lit with passion and desire to continue her search grew.
+        + { flashlight } [Shine the blacklight at the paper] #CLEAR
+            ->black_light_clue_solved 
         + [Look back at book contents]
             #CLEAR
             -> book2
     =black_light_clue_solved
         #CLASS: narration
         It reveals two words amongst the text. "connect" and "four"
-        * [Search your connect four board game]
+        * [Search your connect four board game] #CLEAR
             #CLASS: narration
             Inside the board game, you find a book: The Two Towers.
-            -> book3
+            * * [Open the Two Towers]#CLEAR
+                -> book3
     =look_back
         + [Look back at the book contents] 
         #CLEAR
@@ -281,7 +288,8 @@ You take the flashlight. #CLASS: narration
 === book3 ===
     The Two Towers contains a red peg, and six pieces of paper.#CLASS: narration
     * [Read paper 1]
-        -> hobbit_riddle.clue4
+        -> hobbit_riddle.clue4 ->
+        -> look_back
     *[Read Paper 2] 
         -> map_puzzle.clue2 ->
         -> look_back
@@ -289,17 +297,17 @@ You take the flashlight. #CLASS: narration
     + { map_puzzle.clue2 } [Read about the later days of Fíriel's adventuring] 
         -> map_puzzle.clue2 ->
         -> look_back
-    * [Read Paper 3] 
+    * [Read Paper 3] #CLEAR 
+    #IMAGE:imgs/map_quadrant_3.png
     It is a piece of a map, maybe it will help you with these puzzle pieces.
-        ->book3
-
+        ->look_back
     * [Read Paper 4] -> trek_to_rivendell
     + { trek_to_rivendell } [Read about Fíriel going to Rivendell] -> trek_to_rivendell
     * [Read Paper 5] -> bilbos_poem
     + { bilbos_poem }[Read Bilbo's Poem] -> bilbos_poem
     + { flashlight } [Shine the flashlight at the book]
         -> blacklight_puzzle.clue3 ->
-        -> book3
+        -> look_back
     + [Take a break] 
         You take a break and think about everything that's happened. #CLASS: narration
         -> break
@@ -334,18 +342,18 @@ You take the flashlight. #CLASS: narration
             ->book3
     =bilbos_poem
         The poem reads: #CLASS:narration 
-        #CLASS: text
-        Hey ho, to the bottle I go,
-        To heal my heart and drown my woe,
-        As rain may fall and wind may blow
-        But there’ll still be….. many miles to go.
+        #CLASS: poem
+        Hey ho, to the bottle I go,#CLASS: poem
+        To heal my heart and drown my woe,#CLASS: poem
+        As rain may fall and wind may blow#CLASS: poem
+        But there’ll still be….. many miles to go.#CLASS: poem
         
-        Sweet is the sound of the pouring rain
-        Bubbling stream from hill to plain
-        Longer than plain or rippling brook
-        Until I finish… the ol’ red book 
+        Sweet is the sound of the pouring rain#CLASS: poem
+        Bubbling stream from hill to plain#CLASS: poem
+        Longer than plain or rippling brook#CLASS: poem
+        Until I finish… the ol’ red book #CLASS: poem
         
-        Bilbo Baggins
+        Bilbo Baggins#CLASS: poem
 
         *  [Closely Examine the Poem's Structure]
             The beginning of each line spells bulbs bath, backwards. #CLASS: narration
@@ -366,14 +374,16 @@ You take the flashlight. #CLASS: narration
 === book4 ===
     The Return of the King has 3 pieces of paper in it and a yellow peg.
     * [Read paper 1]
-        -> hobbit_riddle.clue5
+        -> hobbit_riddle.clue5 ->
+        ->->
     * [Read Paper 2]
         -> map_puzzle.clue3 ->
         -> look_back
     + { map_puzzle.clue3 } [Read about the spirit of fire] 
         -> map_puzzle.clue3 ->
         -> look_back
-    * [Read Paper 3] 
+    * [Read Paper 3] #CLEAR 
+        #IMAGE: imgs/map_quadrant_4.png
         it's a quadrant of the map.
         ->look_back
     * [Read Paper 4] -> tin_clue
@@ -404,7 +414,8 @@ You take the flashlight. #CLASS: narration
     #IMAGE: imgs/tin.png
     Similar to the books, you find a blue peg and three pieces of paper. #CLASS: narration
      * [Read paper 1]
-        -> hobbit_riddle.clue6
+        -> hobbit_riddle.clue6 ->
+        ->->
     * [Read paper 2] 
         -> map_puzzle.clue4 ->
         -> look_back

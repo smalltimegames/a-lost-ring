@@ -1,17 +1,41 @@
 === hobbit_riddle ===
    
     = clue1
-        -> picture_frame
+        #CLEAR
+        It contains a chart discusses hobbits. On the reverse side there are five sentences explaining things about them.#CLASS: narration
+        #IMAGE: imgs/lotr_riddle.png
+        The “hobbits” are in order from shortest to tallest left to right#CLASS: riddle_clue
+        The tallest “hobbit” is an honorary hobbit. Established as such for his love of the halflings leaf and bringing fireworks to the shire.#CLASS: riddle_clue
+        The second tallest “hobbit” is fond of a drink that makes him taller.#CLASS: riddle_clue
+        ->->
     = clue2
-        -> jigsaw_box
+        He who is fondest of elves is also fond of their drink.#CLASS: riddle_clue
+        This hobbit is lucky enough that his favorite food falls from the sky to hit him on the head and his favorite drink comes in pints.#CLASS: riddle_clue
+        Bag End is next to Bagshot Row and coincidentally the hobbits who live in those places are standing next to each other.#CLASS: riddle_clue
+        ->->
     = clue3
-        -> book2
+        The hobbit who likes Longbottom Leaf is to the right of the hobbit who enjoys Southern Star.#CLASS: riddle_clue
+        The hobbits in brown and gray adventures in a pair, as did the ones in blue and yellow. They often stayed right next to each other.#CLASS: riddle_clue
+        Frodo didn’t often smoke but kept a pouch of Southern Straits that Bilbo brought back from Dale.#CLASS: riddle_clue
+        Frodo doesn’t wear gray.#CLASS: riddle_clue
+        ->->
     = clue4
-        -> book3
+        Tuckborough is in Tookland which is, of course, where the young Took is from.#CLASS: riddle_clue
+        Sam has been known to grow his favorite food.
+        Gandalf and Frodo are fond of breads.#CLASS: riddle_clue
+        ->->
     = clue5
+        All the true halflings enjoy their favorite food along their journeys.#CLASS: riddle_clue
+        The shortest hobbit doesn’t wear blue or yellow.#CLASS: riddle_clue
+        The hobbit who wears blue likes Southern Star#CLASS: riddle_clue
         -> book4
     = clue6
-        -> tin
+        The two hobbits who drank Ent draught with Treebeard are not the shortest.#CLASS: riddle_clue
+        Sam was never able to afford Old Toby so bought a cheaper pipeweed from Bree.#CLASS: riddle_clue
+        Sam is next to a hobbit in blue.#CLASS: riddle_clue
+        After the sacking of Isengaard, this hobbit says all is as it should be when talking about his height.#CLASS: riddle_clue
+        Frodo gets more of his drink on him than in him.#CLASS: riddle_clue
+        ->->
      = enter_info
         { clue1 and clue2 and clue3 and clue4 and clue5 and clue6:
                You have filled out the entirety of the chart. #CLASS: narration
