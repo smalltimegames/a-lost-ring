@@ -8,6 +8,10 @@
     font-family: 'Bilbo Hand';
     src: url('fonts/bilbo_hand/bilbobold.ttf');
 }
+@font-face {
+    font-family: Tengwar;
+    src: url('fonts/tengwar/TengwarAnnatar-RpaW.ttf');
+}
 .narration{
     font-style: italic;
 }
@@ -28,15 +32,47 @@
 .map-hint{
     font-family: "Party Business";
     text-indent: 20px;
+    font-size: x-large;
+    padding: 0.5em 0.5em 0.5em 1em;
+    color:#444;
+    background-color: #eee;
+    background-image: 
+        radial-gradient(ellipse at top, transparent, #d3b894),
+        radial-gradient(ellipse at bottom, transparent, #ab987f);
+    /* filter:none; */
+}
+.poem{
+    text-indent: 20px;
     /* font-size: x-large; */
     padding: 0.5em 0.5em 0.5em 2em;
     color:#444;
     background-color: #eee;
     font-weight: bold;
     background-image: 
+        radial-gradient(ellipse at top, transparent, #a49a8c),
+        radial-gradient(ellipse at bottom, transparent, #817a70);
+    /* filter:none; */
+}
+.riddle-clue{
+    text-indent: 20px;
+    padding: 0.5em 0.5em 0.5em 2em;
+    color:#444;
+    background-color: #eee;
+    font-weight: bold;
+    background-image: 
+        radial-gradient(ellipse at top, transparent, #c8c8c8),
+        radial-gradient(ellipse at bottom, transparent, #7e7e7e);
+    /* filter:none; */
+}
+.tengwar{
+    font-family: Tengwar;
+    text-indent: 20px;
+    padding: 0.5em 0.5em 0.5em 2em;
+    color:#444;
+    background-color: #eee;
+    background-image: 
         radial-gradient(ellipse at top, transparent, #d3b894),
         radial-gradient(ellipse at bottom, transparent, #ab987f);
-    /* filter:none; */
 }
 /* .text-bg{
     background-color: #eee;

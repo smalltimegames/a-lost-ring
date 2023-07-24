@@ -4,37 +4,39 @@
         #CLEAR
         It contains a chart discusses hobbits. On the reverse side there are five sentences explaining things about them.#CLASS: narration
         #IMAGE: imgs/lotr_riddle.png
-        The “hobbits” are in order from shortest to tallest left to right#CLASS: riddle_clue
-        The tallest “hobbit” is an honorary hobbit. Established as such for his love of the halflings leaf and bringing fireworks to the shire.#CLASS: riddle_clue
-        The second tallest “hobbit” is fond of a drink that makes him taller.#CLASS: riddle_clue
+        The “hobbits” are in order from shortest to tallest left to right#CLASS: riddle-clue
+        The tallest “hobbit” is an honorary hobbit. Established as such for his love of the halflings leaf and bringing fireworks to the shire.#CLASS: riddle-clue
+        The second tallest “hobbit” is fond of a drink that makes him taller.#CLASS: riddle-clue
         ->->
     = clue2
-        He who is fondest of elves is also fond of their drink.#CLASS: riddle_clue
-        This hobbit is lucky enough that his favorite food falls from the sky to hit him on the head and his favorite drink comes in pints.#CLASS: riddle_clue
-        Bag End is next to Bagshot Row and coincidentally the hobbits who live in those places are standing next to each other.#CLASS: riddle_clue
+        #CLEAR
+        It is 5 sentences discussing the hobbits.#CLASS: narration
+        He who is fondest of elves is also fond of their drink.#CLASS: riddle-clue
+        This hobbit is lucky enough that his favorite food falls from the sky to hit him on the head and his favorite drink comes in pints.#CLASS: riddle-clue
+        Bag End is next to Bagshot Row and coincidentally the hobbits who live in those places are standing next to each other.#CLASS: riddle-clue
         ->->
     = clue3
-        The hobbit who likes Longbottom Leaf is to the right of the hobbit who enjoys Southern Star.#CLASS: riddle_clue
-        The hobbits in brown and gray adventures in a pair, as did the ones in blue and yellow. They often stayed right next to each other.#CLASS: riddle_clue
-        Frodo didn’t often smoke but kept a pouch of Southern Straits that Bilbo brought back from Dale.#CLASS: riddle_clue
-        Frodo doesn’t wear gray.#CLASS: riddle_clue
+        The hobbit who likes Longbottom Leaf is to the right of the hobbit who enjoys Southern Star.#CLASS: riddle-clue
+        The hobbits in brown and gray adventures in a pair, as did the ones in blue and yellow. They often stayed right next to each other.#CLASS: riddle-clue
+        Frodo didn’t often smoke but kept a pouch of Southern Straits that Bilbo brought back from Dale.#CLASS: riddle-clue
+        Frodo doesn’t wear gray.#CLASS: riddle-clue
         ->->
     = clue4
-        Tuckborough is in Tookland which is, of course, where the young Took is from.#CLASS: riddle_clue
-        Sam has been known to grow his favorite food.
-        Gandalf and Frodo are fond of breads.#CLASS: riddle_clue
+        Tuckborough is in Tookland which is, of course, where the young Took is from.#CLASS: riddle-clue
+        Sam has been known to grow his favorite food.#CLASS: riddle-clue
+        Gandalf and Frodo are fond of breads.#CLASS: riddle-clue
         ->->
     = clue5
-        All the true halflings enjoy their favorite food along their journeys.#CLASS: riddle_clue
-        The shortest hobbit doesn’t wear blue or yellow.#CLASS: riddle_clue
-        The hobbit who wears blue likes Southern Star#CLASS: riddle_clue
-        -> book4
+        All the true halflings enjoy their favorite food along their journeys.#CLASS: riddle-clue
+        The shortest hobbit doesn’t wear blue or yellow.#CLASS: riddle-clue
+        The hobbit who wears blue likes Southern Star#CLASS: riddle-clue
+        ->->
     = clue6
-        The two hobbits who drank Ent draught with Treebeard are not the shortest.#CLASS: riddle_clue
-        Sam was never able to afford Old Toby so bought a cheaper pipeweed from Bree.#CLASS: riddle_clue
-        Sam is next to a hobbit in blue.#CLASS: riddle_clue
-        After the sacking of Isengaard, this hobbit says all is as it should be when talking about his height.#CLASS: riddle_clue
-        Frodo gets more of his drink on him than in him.#CLASS: riddle_clue
+        The two hobbits who drank Ent draught with Treebeard are not the shortest.#CLASS: riddle-clue
+        Sam was never able to afford Old Toby so bought a cheaper pipeweed from Bree.#CLASS: riddle-clue
+        Sam is next to a hobbit in blue.#CLASS: riddle-clue
+        After the sacking of Isengaard, this hobbit says all is as it should be when talking about his height.#CLASS: riddle-clue
+        Frodo gets more of his drink on him than in him.#CLASS: riddle-clue
         ->->
      = enter_info
         { clue1 and clue2 and clue3 and clue4 and clue5 and clue6:
@@ -76,28 +78,26 @@
 === blacklight_puzzle ===
    
     = clue1
-        The clue in the book says "Under"
+        The clue in the book says "Under"#CLASS: narration
         ->->
     = clue2
-        The clue in the book says "Wood"
+        The clue in the book says "Wood"#CLASS: narration
         ->->
     = clue3
-        The clue in the book says "Four"
+        The clue in the book says "Four"#CLASS: narration
         ->->
     = clue4
-        The clue in the book says "Legs"
+        The clue in the book says "Legs"#CLASS: narration
         ->->
     = all_clues
         #CLASS: narration
         The clues say "Under", "Wood", "Four", "Legs"
-        ->->
-     = enter_info
-        { clue1 and clue2 and clue3 and clue4:
-               You have filled out the entirety of the chart. #CLASS: narration
-               ->complete
-           - else:
-                You fill in all the information you have. #CLASS: narration
-                -> break
-        }
-    = complete
-        -> break
+        
+        The clue seems to be pointing to a table or chair #CLASS: narration
+        + + [Check under the table]#CLEAR
+            You find nothing.
+            ->all_clues
+        + + [Check under the chair]
+            Hidden underneath the chair within the upholstery you find a tin. #CLASS: narration
+            + + + [Open the tin]#CLEAR 
+                ->tin

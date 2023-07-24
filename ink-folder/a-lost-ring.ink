@@ -22,9 +22,12 @@ Tucked into the hollowed out book there is a usb flash drive
 * [Load the drive into your computer]
 #CLEAR
     ->usb_drive
-+ { flashlight } [Shine the flashlight at the book]->blacklight_puzzle.clue1 ->
++ { flashlight } [Shine the flashlight at the book] #CLEAR 
+    ->blacklight_puzzle.clue1 ->
     ->book1
-+ { jigsaw_box } [Take a break and thing about what you've discovered so far] -> break
++ { jigsaw_box } [Take a break and thing about what you've discovered so far] 
+    #CLEAR 
+    -> break
     
 === usb_drive===
 
@@ -107,7 +110,7 @@ You remember that the word means "Friend" in Elvish#CLASS: narration
         It reveals the text #CLASS: narration
             Under the Bookshelf #CLASS: text 
         * * [Look Under your bookshelf] -> jigsaw_box_location
-    +{ jigsaw_box }[Take a break]
+    +{ jigsaw_box }[Take a break]#CLEAR 
         ->break
     = read_fire_hint
     #CLEAR
@@ -117,8 +120,9 @@ You remember that the word means "Friend" in Elvish#CLASS: narration
         ->picture_frame
         
     = jigsaw_hint
-    The ring, alas, did not survive the ordeal but as Fíriel stared into the flames she was inspired to search other places amongst the ruins of Ost-in-Edhil.  Her first inclination was to check the archives.
-    ->picture_frame
+        #CLASS: text
+        The ring, alas, did not survive the ordeal but as Fíriel stared into the flames she was inspired to search other places amongst the ruins of Ost-in-Edhil.  Her first inclination was to check the archives.
+        ->picture_frame
     = read_blank_fire_page
         #CLEAR
         It's blank #CLASS: narration
@@ -142,15 +146,14 @@ You remember that the word means "Friend" in Elvish#CLASS: narration
     TODO we should add some clears and stuff in here
     Inside the box are a mass of jigsaw puzzle pieces and 5 pieces of paper. On the lid of the box there is a drawing and a QR Code. #CLASS: narration
     * [Read paper 1]
-        It is 5 sentences discussing the hobbits.#CLASS: narration
-        ++ [Look back at the box]#CLEAR
         -> hobbit_riddle.clue2 ->
         -> look_back
-    * [Read paper 2]
+    * [Read paper 2]#CLEAR
         #IMAGE: imgs/map_quadrant_1.png
         #CLASS: narration
         It is a piece of a map, maybe it will help you with these puzzle pieces.
         ->jigsaw_box
+        ->look_back
     * [Read paper 3] -> water_hint
     + { not book2 }{ water_hint } [Read about the Library of Ost-in-Edhil] -> water_hint
     * [Read paper 4] 
@@ -166,7 +169,8 @@ You remember that the word means "Friend" in Elvish#CLASS: narration
         * * [Search for Your Warmest Coat] #CLEAR
             #CLASS: narration
             In the back of your closet, you find your warmest coat. Inside of the coat you find the book, The Fellowship of the Ring. It is hollowed out with papers inside.
-            -> book2
+            * * * [Look at the contents]
+                -> book2
     + [Examine the Drawing on the Lid]
         #CLEAR
         #IMAGE: imgs/peg_diagram.png
@@ -206,14 +210,15 @@ You remember that the word means "Friend" in Elvish#CLASS: narration
         + [Look back at the jigsaw box] -> jigsaw_box
         * { map_puzzle.complete }[Enter the word "Bree"]
             -> directions
-        + { break } [Take a break] -> break
+        + { break } [Take a break]#CLEAR 
+            -> break
     
     = directions
     // Have video from Billy Boyd Here
         #CLEAR 
         #IMAGE: imgs/treasure_map.jpg
-        You found a treasure map. It looks like it is near your home.
-        + [Take a break] 
+        You found a treasure map. It looks like it is near your home. #CLASS: narration
+        + [Take a break] #CLEAR
             -> break
 
 
@@ -241,9 +246,9 @@ You remember that the word means "Friend" in Elvish#CLASS: narration
         ->black_light_clue
     + { not flashlight }{ black_light_clue }[Read about Rohan]
         ->black_light_clue
-    + { flashlight }{ black_light_clue } [Shine the blacklight at the paper about Rohan]
+    + { flashlight }{ black_light_clue } [Shine the blacklight at the paper about Rohan]#CLEAR
         -> black_light_clue_solved
-    + { flashlight } [Shine the blacklight at the book]
+    + { flashlight } [Shine the blacklight at the book] #CLEAR
         TODO need book clues
         -> blacklight_puzzle.clue2 ->
         -> book2
@@ -253,7 +258,7 @@ You remember that the word means "Friend" in Elvish#CLASS: narration
         -> flashlight
 
     
-    + [Take a break] 
+    + [Take a break] #CLEAR
         You take a break and think about everything that's happened. #CLASS: narration
         -> break
     
@@ -299,16 +304,18 @@ You take the flashlight. #CLASS: narration
         -> look_back
     * [Read Paper 3] #CLEAR 
     #IMAGE:imgs/map_quadrant_3.png
-    It is a piece of a map, maybe it will help you with these puzzle pieces.
+    It is a piece of a map, maybe it will help you with these puzzle pieces.#CLASS: narration
         ->look_back
     * [Read Paper 4] -> trek_to_rivendell
     + { trek_to_rivendell } [Read about Fíriel going to Rivendell] -> trek_to_rivendell
     * [Read Paper 5] -> bilbos_poem
     + { bilbos_poem }[Read Bilbo's Poem] -> bilbos_poem
-    + { flashlight } [Shine the flashlight at the book]
+    * [Read Paper 6] -> tengwar_message
+    + { tengwar_message }[Read Tengwar Message] -> tengwar_message
+    + { flashlight } [Shine the flashlight at the book] #CLEAR 
         -> blacklight_puzzle.clue3 ->
         -> look_back
-    + [Take a break] 
+    + [Take a break] #CLEAR
         You take a break and think about everything that's happened. #CLASS: narration
         -> break
         
@@ -319,13 +326,17 @@ You take the flashlight. #CLASS: narration
         Compared to her previous trek across Eriador, traveling by horseback to Riverdell passed quickly. She found herself awestruck amongst the few remaining elves, who let her stay in a room that once belonged to Bilbo Baggins. Some of it had been made to hobbit size.  At first, Fíriel kept to herself in Rivendell, mostly exploring the ancient city and watching the elves with a sense of wonder. She also explored her room, wherein she found old papers left behind by Bilbo. Amongst  the mess of papers were many nonsense poems and ramblings of the old hobbit. Firiel also found a note in Elvish, perhaps a musing of Bilbo or perhaps left by one of the Elves.
         -> look_back
     =tengwar_message
-        #IMAGE: imgs/tengwarmessage.png
+        // #IMAGE: imgs/tengwarmessage.png
         #CLASS: narration
         It is a message an elvish { not tengwar_cipher:you can't read it }
         #CLASS: tengwar
         I have taken a liking to the halflings’ pipeweed and tea. Quite often Bilbo and I had enjoyed tea together, followed by a smoke. When he left for the Grey Havens he left me a gift, a box of his finest tea. I shall miss him. I plan to trade for more tea and pipeweed before I join him in the Undying Lands.
-            * { tengwar_cipher } [Translate the message with your cipher.]->tengwar_message_solved
-            ->look_back
+            * { tengwar_cipher } [Translate the message with your cipher.]#CLEAR 
+                ->tengwar_message_solved
+            + [Look back at the Two Towers]
+                #CLEAR
+                ->book3
+
     =tengwar_message_solved
         #CLASS: narration
         You painstakingly translate the Elvish, it appears to be a some sort of diary entry or message from one of Bilbo's Elvish friends.
@@ -357,13 +368,14 @@ You take the flashlight. #CLASS: narration
 
         *  [Closely Examine the Poem's Structure]
             The beginning of each line spells bulbs bath, backwards. #CLASS: narration
-            * * [Search in your bathroom for bulbs]
+            * * [Search in your bathroom for bulbs] #CLEAR
                 Behind the light in your bathroom you find a cipher, it translates Elvish to English. #CLASS: narration
                 ->tengwar_cipher
         + [Look back at the Two Towers] 
             #CLEAR
             -> book3
     = tengwar_cipher
+        #IMAGE: imgs/cipher.png
         ->look_back
     =look_back
         + [Look back at the Two Towers]
@@ -372,10 +384,10 @@ You take the flashlight. #CLASS: narration
 
         
 === book4 ===
-    The Return of the King has 3 pieces of paper in it and a yellow peg.
+    The Return of the King has 3 pieces of paper in it and a yellow peg. #CLASS: narration
     * [Read paper 1]
         -> hobbit_riddle.clue5 ->
-        ->->
+        ->look_back
     * [Read Paper 2]
         -> map_puzzle.clue3 ->
         -> look_back
@@ -384,14 +396,14 @@ You take the flashlight. #CLASS: narration
         -> look_back
     * [Read Paper 3] #CLEAR 
         #IMAGE: imgs/map_quadrant_4.png
-        it's a quadrant of the map.
+        It's a quadrant of the map. #CLASS: narration
         ->look_back
     * [Read Paper 4] -> tin_clue
     + { tin_clue } [Read about the Return to the Shire] ->tin_clue
-    + { flashlight } [Shine the flashlight at the book]
+    + { flashlight } [Shine the flashlight at the book] #CLEAR
         -> blacklight_puzzle.clue4 ->
         -> book4
-    + [Take a break] 
+    + [Take a break] #CLEAR
         You take a break and think about everything that's happened. #CLASS: narration
         -> break
         
@@ -415,7 +427,7 @@ You take the flashlight. #CLASS: narration
     Similar to the books, you find a blue peg and three pieces of paper. #CLASS: narration
      * [Read paper 1]
         -> hobbit_riddle.clue6 ->
-        ->->
+        ->look_back
     * [Read paper 2] 
         -> map_puzzle.clue4 ->
         -> look_back
@@ -427,7 +439,7 @@ You take the flashlight. #CLASS: narration
     + { firiel_ring }[Read about Fíriel and her ring]
         ->firiel_ring
         
-    + [Take a break] 
+    + [Take a break] #CLEAR 
         You take a break and think about everything that's happened. #CLASS: narration
         -> break
 
@@ -467,7 +479,7 @@ You take the flashlight. #CLASS: narration
                 You read the clue from the HTML file.
                 ->html_clue
             }
-            * { not html_clue }[Enter the information you have on your chart]
+            * { not html_clue }[Enter the information you have on your chart] #CLEAR
                 You plug in the information from your chart and hit unlock. The file reveals yet another clue. #CLASS: narration
                 -> html_clue
             - else:
@@ -475,74 +487,79 @@ You take the flashlight. #CLASS: narration
                 -> break
         }
     + { jigsaw_box } { not build_jigsaw.complete} [Work on the jigsaw puzzle ] -> build_jigsaw
-    + { build_jigsaw.complete } [Look at the map] ->look_at_map
-    + { qr_code } { not qr_code.directions } [Look at the website from the QR code]
+    + { build_jigsaw.complete } [Look at the map] #CLEAR 
+        ->look_at_map
+    + { qr_code } { not qr_code.directions } [Look at the website from the QR code] #CLEAR
         ->qr_code
-    + [Look at the picture frame] -> picture_frame
-    + { jigsaw_box } [ Look at the jigsaw box ] -> jigsaw_box
-    + { book2 } [Look at the The Fellowship of the Ring] ->book2
-    + { book3 } [Look at the The Two Towers] ->book3
-    + { book4 } [Look at the The Return of the King] ->book4
-    + { tin } [Look at the tin] ->tin
+    + [Look at the picture frame] #CLEAR
+        -> picture_frame
+    + { jigsaw_box } [ Look at the jigsaw box ] #CLEAR
+        -> jigsaw_box
+    + { book1 } [Look at the The Hobbit] #CLEAR
+        ->book1
+    + { book2 } [Look at the The Fellowship of the Ring] #CLEAR
+        ->book2
+    + { book3 } [Look at the The Two Towers] #CLEAR
+        ->book3
+    + { book4 } [Look at the The Return of the King]#CLEAR
+        ->book4
+    + { tin } [Look at the tin] #CLEAR
+        ->tin
     + { qr_code.directions }[Look at the directions from the website]
         ->qr_code.directions
-    + { book1 }{  book2 }{ book3 }{ book4 }{ flashlight }
-        -> blacklight_puzzle.all_clues ->
-        -> break
-    = html_clue
+    + { book1 }{  book2 }{ book3 }{ book4 }{ flashlight }[Shine your flashlight at all the books] #CLEAR 
+        -> blacklight_puzzle.all_clues
+        = html_clue
         You are shown the text: #CLASS: narration
-        "Three Rings for the Elven-kings under the sky,
-            Seven for the Dwarf-lords in their halls of stone,
-            Nine for Mortal Men doomed to die,
-            One for the Dark Lord on his dark throne
-            In the Land of Mordor where the Shadows lie.
-               One Ring to rule them all, One Ring to find them,
-               One Ring to bring them all, and in the darkness bind them
+        "Three Rings for the Elven-kings under the sky,#CLASS: text
+            Seven for the Dwarf-lords in their halls of stone,#CLASS: text
+            Nine for Mortal Men doomed to die,#CLASS: text
+            One for the Dark Lord on his dark throne#CLASS: text
+            In the Land of Mordor where the Shadows lie.#CLASS: text
+               One Ring to rule them all, One Ring to find them,#CLASS: text
+               One Ring to bring them all, and in the darkness bind them#CLASS: text
             In the Land of Mordor where the Shadows lie."  #CLASS: text
         +[Look at something else]
         -> break
     = look_at_map
         { pin_map < 4 :
-            #CLEAR
             #IMAGE: imgs/map.png 
             You closely examine the map. #CLASS: narration
          }
-        { pin_map > 3:
-            #CLEAR
+        { pin_map > 3 && not map_puzzle.complete:
             #IMAGE: imgs/pinned_map.png
             You closely examine the map with it's pins. #CLASS: narration
         }
         { map_puzzle.complete:
-            #CLEAR
             #IMAGE: imgs/x_map.png
             The map is complete and an X points to the village of "Bree" #CLASS: narration
             TODO CHANGE ME
-            #IMAGE: imgs/sigue_noc.png
+            #IMAGE: imgs/bree.png
         }
-        + + [Read the first map clue]
+        + + [Read the first map clue]#CLEAR
             -> map_puzzle.clue1 ->
             ->look_at_map
-        + + [Read the second map clue]
+        + + [Read the second map clue]#CLEAR
             -> map_puzzle.clue2 ->
             ->look_at_map
-        + + [Read the third map clue]
+        + + [Read the third map clue]#CLEAR
             -> map_puzzle.clue3 ->
             ->look_at_map
-        + + [Read the fourth map clue]
-            -> map_puzzle.clue3 ->
+        + + [Read the fourth map clue]#CLEAR
+            -> map_puzzle.clue4 ->
             ->look_at_map
-        * * { pin_map > 3 } [Connect the pins to make an X]
+        * * { pin_map > 3 } [Connect the pins to make an X] #CLEAR
             ->map_puzzle.complete
-        * * { map_puzzle.clue1 } [Place a peg on the Grey Havens]
+        * * { map_puzzle.clue1 } [Place a peg on the Grey Havens] #CLEAR
             ->pin_map.pin1
-        * * { map_puzzle.clue2 } [Place a peg on the last "n" of Rhovanion]
+        * * { map_puzzle.clue2 } [Place a peg on the last "n" of Rhovanion] #CLEAR
             ->pin_map.pin2
-        * * { map_puzzle.clue3 } [Place a peg on Erebor]
+        * * { map_puzzle.clue3 } [Place a peg on Erebor] #CLEAR
             ->pin_map.pin3
-        * * { map_puzzle.clue4 } [Place a peg on Lake Evendim]
+        * * { map_puzzle.clue4 } [Place a peg on Lake Evendim]#CLEAR
             ->pin_map.pin4
-        + + [Look at something else] 
-        -> break
+        + + [Look at something else] #CLEAR
+            -> break
 
 
 
@@ -573,9 +590,10 @@ You take the flashlight. #CLASS: narration
     +[Using the map, find the x]
         #IMAGE: imgs/treasure_map.jpg
         You walk towards the spot on the map showing an "X" and in that area you see a flower in bloom. #CLASS:narration
-        + + [Head back into the house and take a break] -> break
+        + + [Head back into the house and take a break] #CLEAR  
+            -> break
         * * [Dig around the flower to see if you can find something] #CLEAR 
-            After looking around the flower, you notice that it's just in a pot in the ground. Pulling up the pot, you find a box beneath. It's locked with a combination of 4 numbers. 
+            After looking around the flower, you notice that it's just in a pot in the ground. Pulling up the pot, you find a box beneath. It's locked with a combination of 4 numbers. #CLASS: narration
             TODO there should be a hint about the numbers
                 + + + [In a attempt at a guess you put 3791, the number of rings]
                 #CLASS: narration
