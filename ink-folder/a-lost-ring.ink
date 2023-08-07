@@ -9,7 +9,7 @@ On your shelf, you find a book, "The Hobbit" that you haven't seen before.#CLASS
     ->book1
 === book1 ===
 #CLASS: narration
-Inside the book you find a folded up note note. It appears old and handwritten.
+Inside the book you find a folded up note. It appears old and handwritten.
  #CLASS: text
 Having opened this book, I suppose you already know much of hobbits. A little people, with no beards, rough hairy feet, and quite round in the middle. They are fond of pipe weed and even fonder of breakfast, lunch, and dinner. Especially second breakfast, lunch, and dinner. What they aren’t fond of is adventure or doing anything unexpected. Bilbo Baggins was a hobbit who did things unexpected and had himself a grand adventure. And he has had nothing but trouble since. Trouble and a vast amount of treasure. Hobbits who didn’t know Bilbo would have assumed he was a Took (and he was, although not in name) as Tooks have a penchant for trouble.
  #CLASS: text
@@ -249,7 +249,6 @@ You remember that the word means "Friend" in Elvish#CLASS: narration
     + { flashlight }{ black_light_clue } [Shine the blacklight at the paper about Rohan]#CLEAR
         -> black_light_clue_solved
     + { flashlight } [Shine the blacklight at the book] #CLEAR
-        TODO need book clues
         -> blacklight_puzzle.clue2 ->
         -> book2
     * [Examine the flashlight] #CLEAR
@@ -448,7 +447,7 @@ You take the flashlight. #CLASS: narration
         ->tin
     =firiel_ring
     #CLASS: text
-        Fíriel alternated between wearing the ring on her finger and wearing it around her neck. It seems to fit her finger perfectly no matter which finger it was placed. The ring did not seem to give her any powers – no invisibility, no control over men or other races. But when she put it on she did feel the pride which came with completing her quest to discover the ring.
+        Fíriel alternated between wearing the ring on her finger and wearing it around her neck. It seems to fit her finger perfectly no matter which finger it was placed on. The ring did not seem to give her any powers – no invisibility, no control over men or other races. But when she put it on she did feel the pride which came with completing her quest to discover the ring.
     #CLASS: text
         So I have read in her writings which were never as consistent after she returned to Bag End. She did yet venture out from the Shire with her ring, though it is not known what became of the ring. Perhaps she left it on one of her adventures,, perhaps at the end it was buried with her, or perhaps she ventured with it to the Undying Lands; her friendship with the elves would have surely earned her a journey. I have compiled some of her writings but I have not yet been able to determine the ring's resting place.
         ->look_back
@@ -489,7 +488,7 @@ You take the flashlight. #CLASS: narration
     + { jigsaw_box } { not build_jigsaw.complete} [Work on the jigsaw puzzle ] -> build_jigsaw
     + { build_jigsaw.complete } [Look at the map] #CLEAR 
         ->look_at_map
-    + { qr_code } { not qr_code.directions } [Look at the website from the QR code] #CLEAR
+    + { jigsaw_box } { not qr_code.directions } [Look at the website from the QR code] #CLEAR
         ->qr_code
     + [Look at the picture frame] #CLEAR
         -> picture_frame

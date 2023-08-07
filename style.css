@@ -12,12 +12,24 @@
     font-family: Tengwar;
     src: url('fonts/tengwar/TengwarAnnatar-RpaW.ttf');
 }
+@font-face {
+    font-family: 'Hobbiton Hand';
+    src: url("fonts/hobbiton-font/HobbitonHandscrawl.ttf");
+}
+@font-face {
+    font-family: Ringbearer;
+    src: url('fonts/ringbearer-font/RingbearerMedium-51mgZ.ttf');
+}
+@font-face {
+    font-family: Middleearth;
+    src: url('fonts/middleearth-font/Middleearth.ttf');
+}
 .narration{
     font-style: italic;
 }
 .text{
     /* font-family: "Party Business"; */
-    /* font-family: "Bilbo Hand"; */
+    font-family: "Middle Earth";
     text-indent: 20px;
     /* font-size: x-large; */
     padding: 0.5em 0.5em 0.5em 2em;
@@ -30,7 +42,7 @@
     /* filter:none; */
 }
 .map-hint{
-    font-family: "Party Business";
+    font-family: "Hobbiton Hand";
     text-indent: 20px;
     font-size: x-large;
     padding: 0.5em 0.5em 0.5em 1em;
@@ -43,6 +55,7 @@
 }
 .poem{
     text-indent: 20px;
+    font-family: "Party Business";
     /* font-size: x-large; */
     padding: 0.5em 0.5em 0.5em 2em;
     color:#444;
@@ -54,6 +67,7 @@
     /* filter:none; */
 }
 .riddle-clue{
+    font-family: 'Ringbearer';
     text-indent: 20px;
     padding: 0.5em 0.5em 0.5em 2em;
     color:#444;

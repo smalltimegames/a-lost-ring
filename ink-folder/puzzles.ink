@@ -57,7 +57,6 @@
         ->->
     = clue2
         //Red
-        TODO perspective on this is wrong
         In later days, Fíriel ventured far and wide, exploring the far reaches of Middle-earth. Westward she ventured, passing Gladden fields, lightly stepping into Fangorn, and even venturing through the shadowed paths of Mirkwood. Few had ventured as far, save for the boldest of souls like Gandalf and King Elessar, known to us hobbits as Strider. Her wanderlust carried her to the very end of Rhovanion, before she heeded the call to turn back, leaving her footprints on the edge of the known world. I found myself wondering if any treasure was worth all this trouble as I made the same journey across the realm. #CLASS: map-hint
         ->->
     = clue3
@@ -67,7 +66,6 @@
         ->->
     = clue4
         //blue
-        TODO perspective is wrong
         To me, it seemed, Fíriel's sense of adventure was more grand than even Bilbo’s. In my readings she was often the talk of the Shire. Why I imagine even her great-grandad the Gaffer might have said, “she’s cracked, that lass” supposing he was alive at the time. But not all of Fíriel's travels were beyond the grasp of hobbits. Much to my pleasure and surprise, not all of Fíriel's travels were beyond the grasp of hobbits. She once wrote of walking to the head of the Brandywine River,  seeking solace in the beauty of the lake and its tranquil shores. I had been there many times, but this time I ventured there with finding traces of Fíriel's at the forefront of my trip.#CLASS: map-hint
         ->->
     = complete
@@ -78,20 +76,24 @@
 === blacklight_puzzle ===
    
     = clue1
+        #IMAGE: imgs/blacklight/blacklight_under.jpg
         The clue in the book says "Under"#CLASS: narration
         ->->
     = clue2
+        #IMAGE: imgs/blacklight/blacklight_wood.jpg
         The clue in the book says "Wood"#CLASS: narration
         ->->
     = clue3
-        The clue in the book says "Four"#CLASS: narration
+        #IMAGE: imgs/blacklight/blacklight_leg.jpg
+        The clue in the book says "Leg"#CLASS: narration
         ->->
     = clue4
-        The clue in the book says "Legs"#CLASS: narration
+        #IMAGE: imgs/blacklight/blacklight_4.jpg
+        The clue in the book says "4"#CLASS: narration
         ->->
     = all_clues
         #CLASS: narration
-        The clues say "Under", "Wood", "Four", "Legs"
+        The clues say "Under", "Wood", "4", "Legs"
         
         The clue seems to be pointing to a table or chair #CLASS: narration
         + + [Check under the table]#CLEAR
